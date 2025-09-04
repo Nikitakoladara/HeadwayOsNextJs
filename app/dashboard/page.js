@@ -140,10 +140,6 @@ export default function Dashboard() {
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const [rightSidebarVisible, setRightSidebarVisible] = useState(true);
 
-  const toggleSidebar = () => {
-    setSidebarExpanded(!sidebarExpanded);
-  };
-
   const toggleRightSidebar = () => {
     setRightSidebarVisible(!rightSidebarVisible);
   };
@@ -151,11 +147,7 @@ export default function Dashboard() {
   const handleNavClick = (navItem) => {
     setActiveNavItem(navItem);
     // Toggle sidebar on nav click
-    if (sidebarExpanded) {
-      setSidebarExpanded(false);
-    } else {
-      setSidebarExpanded(true);
-    }
+    setSidebarExpanded(!sidebarExpanded);
   };
 
   return (
@@ -175,36 +167,7 @@ export default function Dashboard() {
             <Button 
               variant="ghost" 
               size="sm" 
-              className={`text-gray-300 ${rightSidebarVisible ? 'bg-white/10' : ''}`}
-              onClick={toggleRightSidebar}
-            >
-              Insights
-            </Button>
-            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-              <span className="text-xs">A</span>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div className="flex">
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-      {/* Header */}
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-4">
-            <h1 className="text-lg font-semibold">New</h1>
-            <span className="text-sm text-gray-400">HeadwayOS</span>
-            <div className="flex items-center gap-2 ml-4">
-              <span className="text-sm text-gray-400">🔍 Search</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="text-gray-300">New</Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className={`text-gray-300 ${rightSidebarVisible ? 'bg-white/10' : ''}`}
+              className={`text-gray-300 transition-all ${rightSidebarVisible ? 'bg-white/10' : ''}`}
               onClick={toggleRightSidebar}
             >
               Insights
