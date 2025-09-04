@@ -119,7 +119,7 @@ function NeonCursor() {
       aria-hidden
       className="pointer-events-none fixed inset-0 z-0"
       style={{
-        background: `radial-gradient(220px 220px at ${pos.x}px ${pos.y}px, rgba(255,255,255,.10), transparent 60%)`,
+        background: `radial-gradient(220px 220px at ${pos.x}px ${pos.y}px, rgba(96,165,250,.10), transparent 60%)`,
       }}
     />
   );
