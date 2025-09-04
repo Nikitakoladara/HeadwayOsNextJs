@@ -148,9 +148,8 @@ function PrimaryButton({ children, onClick, disabled }) {
     <button
       onClick={onClick}
       disabled={disabled}
-      className="group relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-md border border-white/20 bg-white/10 px-4 font-medium text-gray-100 shadow-inner transition active:scale-[.99] disabled:opacity-50"
+      className="group relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-md bg-primary px-4 font-medium text-primary-foreground shadow-sm transition active:scale-[.99] disabled:opacity-50 hover:bg-primary/90"
     >
-      <span className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-b from-white/10 to-transparent opacity-0 transition group-hover:opacity-100" />
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </button>
   );
@@ -161,7 +160,7 @@ function GhostButton({ children, onClick, disabled }) {
     <button
       onClick={onClick}
       disabled={disabled}
-      className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 text-gray-200 transition hover:bg-white/10 active:scale-[.99] disabled:opacity-50"
+      className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border bg-secondary px-4 text-secondary-foreground transition hover:bg-accent active:scale-[.99] disabled:opacity-50"
     >
       {children}
     </button>
