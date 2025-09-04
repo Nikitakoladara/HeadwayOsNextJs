@@ -65,19 +65,20 @@ function CircularProgress({ percentage, size = "large" }) {
   );
 }
 
-function SidebarNavItem({ icon, label, active = false }) {
+function SidebarNavItem({ icon, label, active = false, onClick, isExpanded }) {
   return (
     <div 
+      onClick={onClick}
       className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all ${
         active 
           ? 'bg-white/20 text-white border border-white/20' 
           : 'text-gray-400 hover:bg-white/10 hover:text-gray-300'
-      }`}
+      } ${!isExpanded ? 'justify-center' : ''}`}
     >
       <div className="w-5 h-5 flex items-center justify-center">
         {icon}
       </div>
-      <span className="text-sm font-medium">{label}</span>
+      {isExpanded && <span className="text-sm font-medium">{label}</span>}
     </div>
   );
 }
