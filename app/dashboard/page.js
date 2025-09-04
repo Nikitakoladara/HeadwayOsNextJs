@@ -40,7 +40,7 @@ function CircularProgress({ percentage, size = "large" }) {
             cx="50"
             cy="50"
             r={radius}
-            stroke="rgba(255,255,255,0.1)"
+            stroke="rgb(var(--muted-foreground) / 0.2)"
             strokeWidth="6"
             fill="none"
           />
@@ -48,7 +48,7 @@ function CircularProgress({ percentage, size = "large" }) {
             cx="50"
             cy="50"
             r={radius}
-            stroke="rgba(255,255,255,0.8)"
+            stroke="rgb(var(--primary) / 0.8)"
             strokeWidth="6"
             fill="none"
             strokeLinecap="round"
@@ -59,7 +59,7 @@ function CircularProgress({ percentage, size = "large" }) {
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-xl font-bold text-white">{percentage}%</span>
+          <span className="text-xl font-bold text-foreground">{percentage}%</span>
         </div>
       </div>
     </div>
