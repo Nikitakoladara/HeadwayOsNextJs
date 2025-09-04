@@ -1,4 +1,5 @@
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata = {
   title: 'HeadwayOS – Get started',
@@ -7,9 +8,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="bg-black">
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-background text-foreground">
+        <ThemeProvider defaultTheme="dark" storageKey="headway-theme">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
