@@ -129,7 +129,7 @@ frontend:
           agent: "main"
           comment: "Updated theme provider to support both light and dark modes with proper state management. Added theme toggle functionality to dashboard header. Light mode set as default, users can switch between modes seamlessly. Removed dark-mode-only restriction and enabled full theme flexibility."
 
-  - task: "Onboarding Page Theme Integration"
+  - task: "Dark Mode Onboarding Page Implementation"
     implemented: true
     working: true
     file: "/app/app/page.js"
@@ -139,7 +139,7 @@ frontend:
     status_history:
         - working: true
           agent: "main"
-          comment: "Updated all onboarding components to use semantic design tokens instead of hardcoded colors. FogCard, PrimaryButton, GhostButton, Chip, QuickReplyPill, and SkillChip components now use theme variables (border-border, bg-card, text-foreground, etc.). Input fields and form elements styled with proper theme integration. Popup forms now match the provided color theme perfectly."
+          comment: "Successfully converted onboarding popup forms to dark mode to match dashboard design. Updated FogCard with glassmorphism effects using bg-black/20 and backdrop-blur-xl. PrimaryButton and GhostButton now use dark theme with white/10 backgrounds and proper contrast. Updated Chip, QuickReplyPill, SkillChip components with dark styling. Enhanced background with blue accent radial gradient. Input fields use proper dark styling with white/5 backgrounds and gray text. All popup forms now consistently match the dark dashboard aesthetic."
 
   - task: "Dashboard Theme Modernization"
     implemented: true
