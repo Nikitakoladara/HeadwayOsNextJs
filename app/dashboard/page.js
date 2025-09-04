@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 // Dashboard metric components
 function MetricCard({ title, value, subtitle, percentage, variant = "default" }) {
