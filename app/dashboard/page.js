@@ -247,12 +247,12 @@ export default function Dashboard() {
           <div className={`grid gap-6 ${rightSidebarVisible ? 'grid-cols-12' : 'grid-cols-1'}`}>
             {/* Welcome Section */}
             <div className={rightSidebarVisible ? 'col-span-8' : 'col-span-1'}>
-              <div className="rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm mb-6 hover:bg-white/10 transition-all">
+              <div className="rounded-lg border border-border bg-card p-6 backdrop-blur-sm mb-6 hover:bg-accent transition-all shadow-sm">
                 <div className="mb-4">
-                  <span className="text-sm text-gray-400 uppercase tracking-wide">WELCOME BACK</span>
+                  <span className="text-sm text-muted-foreground uppercase tracking-wide">WELCOME BACK</span>
                 </div>
-                <h2 className="text-2xl font-bold mb-2 text-white">Aarav, ready to move your Backend SWE plan forward?</h2>
-                <p className="text-gray-400 text-sm mb-6">City: Bengaluru • Last session: 06:42 • Scenic Resume: Tailor — Orbit</p>
+                <h2 className="text-2xl font-bold mb-2 text-card-foreground">Aarav, ready to move your Backend SWE plan forward?</h2>
+                <p className="text-muted-foreground text-sm mb-6">City: Bengaluru • Last session: 06:42 • Scenic Resume: Tailor — Orbit</p>
                 
                 {/* Main Metrics */}
                 <div className="grid grid-cols-4 gap-4">
