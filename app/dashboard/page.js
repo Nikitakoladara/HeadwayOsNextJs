@@ -152,28 +152,29 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
+      <header className="border-b border-border bg-card/20 backdrop-blur-sm">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-4">
             <h1 className="text-lg font-semibold">New</h1>
-            <span className="text-sm text-gray-400">HeadwayOS</span>
+            <span className="text-sm text-muted-foreground">HeadwayOS</span>
             <div className="flex items-center gap-2 ml-4">
-              <span className="text-sm text-gray-400">🔍 Search</span>
+              <span className="text-sm text-muted-foreground">🔍 Search</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="text-gray-300">New</Button>
+            <Button variant="ghost" size="sm" className="text-muted-foreground">New</Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className={`text-gray-300 transition-all ${rightSidebarVisible ? 'bg-white/10' : ''}`}
+              className={`text-muted-foreground transition-all ${rightSidebarVisible ? 'bg-accent' : ''}`}
               onClick={toggleRightSidebar}
             >
               Insights
             </Button>
-            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+            <ThemeToggle />
+            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
               <span className="text-xs">A</span>
             </div>
           </div>
