@@ -181,7 +181,7 @@ export default function Dashboard() {
 
       <div className="flex">
         {/* Left Sidebar */}
-        <aside className={`${sidebarExpanded ? 'w-64' : 'w-16'} min-h-screen border-r border-white/10 bg-black/20 backdrop-blur-sm p-4 transition-all duration-300`}>
+        <aside className={`${sidebarExpanded ? 'w-64' : 'w-16'} min-h-screen border-r border-sidebar-border bg-sidebar backdrop-blur-sm p-4 transition-all duration-300`}>
           <nav className="space-y-2">
             <SidebarNavItem 
               icon="🏠" 
