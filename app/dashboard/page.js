@@ -8,14 +8,14 @@ import { Progress } from "@/components/ui/progress";
 // Dashboard metric components with enhanced dark mode design
 function MetricCard({ title, value, subtitle, percentage, variant = "default" }) {
   return (
-    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
       <div className="space-y-2">
-        <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wide">{title}</h3>
+        <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">{title}</h3>
         <div className="space-y-1">
-          <div className="text-2xl font-bold text-white">{value}</div>
-          {subtitle && <div className="text-xs text-gray-400">{subtitle}</div>}
+          <div className="text-2xl font-bold text-card-foreground">{value}</div>
+          {subtitle && <div className="text-xs text-muted-foreground">{subtitle}</div>}
           {percentage && (
-            <div className="text-sm text-gray-300">{percentage}</div>
+            <div className="text-sm text-foreground">{percentage}</div>
           )}
         </div>
       </div>
