@@ -173,6 +173,7 @@ export default function Dashboard() {
             >
               Insights
             </Button>
+            <ThemeToggle />
             <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent transition-all cursor-pointer">
               <span className="text-xs text-foreground">A</span>
             </div>
