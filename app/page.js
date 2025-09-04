@@ -223,10 +223,10 @@ function QuickReplyPill({ text, onClick, selected = false }) {
 
 function SkillChip({ skill, onRemove }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-md border border-border bg-accent px-3 py-1 text-sm text-accent-foreground">
+    <div className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-1 text-sm text-gray-100">
       <span>{skill.name}</span>
       <span className="text-xs opacity-60">({skill.level})</span>
-      <button onClick={onRemove} className="ml-1 text-muted-foreground hover:text-foreground">×</button>
+      <button onClick={onRemove} className="ml-1 text-gray-400 hover:text-gray-200">×</button>
     </div>
   );
 }
