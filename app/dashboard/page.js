@@ -137,8 +137,26 @@ function SkillRadarChart() {
 
 export default function Dashboard() {
   const [activeNavItem, setActiveNavItem] = useState("Home");
+  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  const [rightSidebarVisible, setRightSidebarVisible] = useState(true);
 
-  return (
+  const toggleSidebar = () => {
+    setSidebarExpanded(!sidebarExpanded);
+  };
+
+  const toggleRightSidebar = () => {
+    setRightSidebarVisible(!rightSidebarVisible);
+  };
+
+  const handleNavClick = (navItem) => {
+    setActiveNavItem(navItem);
+    // Toggle sidebar on nav click
+    if (sidebarExpanded) {
+      setSidebarExpanded(false);
+    } else {
+      setSidebarExpanded(true);
+    }
+  };
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
       {/* Header */}
       <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
