@@ -212,8 +212,8 @@ function QuickReplyPill({ text, onClick, selected = false }) {
       onClick={onClick}
       className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${
         selected 
-          ? 'border-primary bg-accent text-accent-foreground' 
-          : 'border-border bg-secondary text-secondary-foreground hover:bg-accent'
+          ? 'border-white/30 bg-white/20 text-gray-100' 
+          : 'border-white/10 bg-white/5 text-gray-300 hover:bg-white/10'
       }`}
     >
       {text}
