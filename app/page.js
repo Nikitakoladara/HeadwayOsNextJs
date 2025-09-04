@@ -488,8 +488,8 @@ export default function HeadwayOAuthAndOnboarding() {
                   </div>
                 </div>
                 <label className="grid gap-2">
-                  <span className="text-sm text-gray-300">Workspace name</span>
-                  <input value={wsName} onChange={(e)=>setWsName(e.target.value)} className="h-11 rounded-md border border-white/10 bg-white/5 px-3 text-gray-100 outline-none placeholder:text-gray-500 focus:border-white/20" placeholder="e.g., Darshil's Workspace"/>
+                  <span className="text-sm text-muted-foreground">Workspace name</span>
+                  <input value={wsName} onChange={(e)=>setWsName(e.target.value)} className="h-11 rounded-md border border-border bg-input px-3 text-foreground outline-none placeholder:text-muted-foreground focus:border-ring focus:ring-1 focus:ring-ring" placeholder="e.g., Darshil's Workspace"/>
                 </label>
                 <div className="mt-2 flex justify-end"><PrimaryButton onClick={createWorkspace} disabled={processing}>{processing ? (<><Loader className="mr-2"/>Creating…</>) : (<>Create<IconArrowRight className="ml-1"/></>)}</PrimaryButton></div>
               </div>
