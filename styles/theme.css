@@ -1,109 +1,60 @@
-/* Theme Configuration - RGB Color System */
+/* Enhanced Dark Mode Only Theme Configuration */
 
 :root { 
-  /* Base Colors */
-  --background: rgb(252 252 252); 
-  --foreground: rgb(0 0 0); 
-  --card: rgb(255 255 255); 
-  --card-foreground: rgb(0 0 0); 
-  --popover: rgb(252 252 252); 
-  --popover-foreground: rgb(0 0 0); 
-  --primary: rgb(0 0 0); 
-  --primary-foreground: rgb(255 255 255); 
-  --secondary: rgb(235 235 235); 
-  --secondary-foreground: rgb(0 0 0); 
-  --muted: rgb(245 245 245); 
-  --muted-foreground: rgb(82 82 82); 
-  --accent: rgb(235 235 235); 
-  --accent-foreground: rgb(0 0 0); 
-  --destructive: rgb(229 75 79); 
-  --border: rgb(228 228 228); 
-  --input: rgb(235 235 235); 
-  --ring: rgb(0 0 0); 
+  /* Dark Mode Colors - Enhanced for better contrast and visibility */
+  --background: rgb(15 15 15); 
+  --foreground: rgb(230 230 230); 
+  --card: rgb(20 20 20); 
+  --card-foreground: rgb(230 230 230); 
+  --popover: rgb(17 17 17); 
+  --popover-foreground: rgb(230 230 230); 
+  --primary: rgb(96 165 250); 
+  --primary-foreground: rgb(13 13 13); 
+  --secondary: rgb(55 65 81); 
+  --secondary-foreground: rgb(230 230 230); 
+  --muted: rgb(31 41 55); 
+  --muted-foreground: rgb(156 163 175); 
+  --accent: rgb(75 85 99); 
+  --accent-foreground: rgb(230 230 230); 
+  --destructive: rgb(239 68 68); 
+  --border: rgb(55 65 81); 
+  --input: rgb(55 65 81); 
+  --ring: rgb(96 165 250); 
   
-  /* Chart Colors */
-  --chart-1: rgb(255 174 4); 
-  --chart-2: rgb(45 98 239); 
-  --chart-3: rgb(164 164 164); 
-  --chart-4: rgb(228 228 228); 
-  --chart-5: rgb(116 116 116); 
+  /* Chart Colors - Enhanced for dark mode */
+  --chart-1: rgb(34 197 94); 
+  --chart-2: rgb(59 130 246); 
+  --chart-3: rgb(168 85 247); 
+  --chart-4: rgb(249 115 22); 
+  --chart-5: rgb(236 72 153); 
   
-  /* Sidebar Colors */
-  --sidebar: rgb(252 252 252); 
-  --sidebar-foreground: rgb(0 0 0); 
-  --sidebar-primary: rgb(0 0 0); 
-  --sidebar-primary-foreground: rgb(255 255 255); 
-  --sidebar-accent: rgb(235 235 235); 
-  --sidebar-accent-foreground: rgb(0 0 0); 
-  --sidebar-border: rgb(235 235 235); 
-  --sidebar-ring: rgb(0 0 0); 
+  /* Sidebar Colors - Enhanced */
+  --sidebar: rgb(17 24 39); 
+  --sidebar-foreground: rgb(230 230 230); 
+  --sidebar-primary: rgb(96 165 250); 
+  --sidebar-primary-foreground: rgb(15 15 15); 
+  --sidebar-accent: rgb(55 65 81); 
+  --sidebar-accent-foreground: rgb(230 230 230); 
+  --sidebar-border: rgb(55 65 81); 
+  --sidebar-ring: rgb(96 165 250); 
  
   /* Typography */
-  --font-sans: Geist, Geist Fallback, sans-serif; 
-  --font-serif: Lato, sans-serif; 
-  --font-mono: Delius Swash Caps, serif; 
+  --font-sans: Geist, Geist Fallback, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+  --font-serif: Lato, serif; 
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace; 
  
   /* Border Radius */
   --radius: 0.5rem; 
    
-  /* Shadows */
-  --shadow-2xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
-  --shadow-xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
-  --shadow-sm: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 1px 2px -1px rgb(0 0 0 / 0.09); 
-  --shadow: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 1px 2px -1px rgb(0 0 0 / 0.09); 
-  --shadow-md: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 2px 4px -1px rgb(0 0 0 / 0.09); 
-  --shadow-lg: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 4px 6px -1px rgb(0 0 0 / 0.09); 
-  --shadow-xl: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 8px 10px -1px rgb(0 0 0 / 0.09); 
-  --shadow-2xl: 0px 1px 2px 0px rgb(0 0 0 / 0.22); 
-} 
- 
-.dark { 
-  /* Base Colors - Dark Mode */
-  --background: rgb(15 15 15); 
-  --foreground: rgb(209 209 209); 
-  --card: rgb(15 15 15); 
-  --card-foreground: rgb(219 219 219); 
-  --popover: rgb(17 17 17); 
-  --popover-foreground: rgb(209 209 209); 
-  --primary: rgb(217 217 217); 
-  --primary-foreground: rgb(13 13 13); 
-  --secondary: rgb(34 34 34); 
-  --secondary-foreground: rgb(184 184 184); 
-  --muted: rgb(29 29 29); 
-  --muted-foreground: rgb(165 165 165); 
-  --accent: rgb(74 74 74); 
-  --accent-foreground: rgb(209 209 209); 
-  --destructive: rgb(255 91 92); 
-  --border: rgb(31 31 31); 
-  --input: rgb(43 43 43); 
-  --ring: rgb(199 199 199); 
-  
-  /* Chart Colors - Dark Mode */
-  --chart-1: rgb(237 163 2); 
-  --chart-2: rgb(0 90 235); 
-  --chart-3: rgb(112 112 112); 
-  --chart-4: rgb(80 80 80); 
-  --chart-5: rgb(194 194 194); 
-  
-  /* Sidebar Colors - Dark Mode */
-  --sidebar: rgb(26 26 26); 
-  --sidebar-foreground: rgb(230 230 230); 
-  --sidebar-primary: rgb(217 217 217); 
-  --sidebar-primary-foreground: rgb(112 112 112); 
-  --sidebar-accent: rgb(56 56 56); 
-  --sidebar-accent-foreground: rgb(199 199 199); 
-  --sidebar-border: rgb(33 33 33); 
-  --sidebar-ring: rgb(154 154 154); 
-   
-  /* Shadows - Dark Mode */  
-  --shadow-2xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
-  --shadow-xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
-  --shadow-sm: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 1px 2px -1px rgb(0 0 0 / 0.09); 
-  --shadow: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 1px 2px -1px rgb(0 0 0 / 0.09); 
-  --shadow-md: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 2px 4px -1px rgb(0 0 0 / 0.09); 
-  --shadow-lg: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 4px 6px -1px rgb(0 0 0 / 0.09); 
-  --shadow-xl: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 8px 10px -1px rgb(0 0 0 / 0.09); 
-  --shadow-2xl: 0px 1px 2px 0px rgb(0 0 0 / 0.22); 
+  /* Enhanced Shadows for dark mode */
+  --shadow-2xs: 0px 1px 2px 0px rgb(0 0 0 / 0.1); 
+  --shadow-xs: 0px 1px 2px 0px rgb(0 0 0 / 0.1); 
+  --shadow-sm: 0px 1px 3px 0px rgb(0 0 0 / 0.2), 0px 1px 2px -1px rgb(0 0 0 / 0.1); 
+  --shadow: 0px 1px 3px 0px rgb(0 0 0 / 0.2), 0px 1px 2px -1px rgb(0 0 0 / 0.1); 
+  --shadow-md: 0px 4px 6px -1px rgb(0 0 0 / 0.2), 0px 2px 4px -2px rgb(0 0 0 / 0.1); 
+  --shadow-lg: 0px 10px 15px -3px rgb(0 0 0 / 0.2), 0px 4px 6px -4px rgb(0 0 0 / 0.1); 
+  --shadow-xl: 0px 20px 25px -5px rgb(0 0 0 / 0.2), 0px 8px 10px -6px rgb(0 0 0 / 0.1); 
+  --shadow-2xl: 0px 25px 50px -12px rgb(0 0 0 / 0.4); 
 } 
 
 /* Tailwind Integration Layer */
@@ -159,27 +110,42 @@
   --shadow-2xl: var(--shadow-2xl); 
 }
 
-/* Theme utilities for glassmorphism and effects */
-.theme-glass {
-  background: rgb(var(--background) / 0.05);
-  border: 1px solid rgb(var(--border) / 0.1);
+/* Enhanced dark mode utilities */
+.dark-glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
 }
 
-.theme-glass-card {
-  background: rgb(var(--card) / 0.05);
-  border: 1px solid rgb(var(--border) / 0.1);
+.dark-glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
 }
 
-.theme-shadow-sm {
+.dark-shadow-sm {
   box-shadow: var(--shadow-sm);
 }
 
-.theme-shadow-md {
+.dark-shadow-md {
   box-shadow: var(--shadow-md);
 }
 
-.theme-shadow-lg {
+.dark-shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Enhanced gradient backgrounds for dark mode */
+.dark-gradient-bg {
+  background: linear-gradient(135deg, rgb(17 24 39) 0%, rgb(0 0 0) 50%, rgb(17 24 39) 100%);
+}
+
+.dark-card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.dark-card-hover:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
 }
