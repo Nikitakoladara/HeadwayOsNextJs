@@ -1,0 +1,212 @@
+yarn run v1.22.22
+$ next dev --hostname 0.0.0.0 --port 3001
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3001
+  - Network:      http://0.0.0.0:3001
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 1225ms
+ ○ Compiling / ...
+ ✓ Compiled / in 12s (1172 modules)
+ HEAD / 200 in 12334ms
+ ✓ Compiled in 660ms (593 modules)
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 1786ms (827 modules)
+ GET /dashboard 200 in 2004ms
+ ✓ Compiled in 2.1s (607 modules)
+ ✓ Compiled in 206ms (593 modules)
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Expression expected
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:456:1]
+ [2m456[0m |         </main>
+ [2m457[0m |       </div>
+ [2m458[0m |     </div>
+ [2m459[0m |   );
+     : [31;1m  ^[0m
+ [2m460[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Expression expected
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:463:1]
+ [2m463[0m |         </main>
+ [2m464[0m |       </div>
+ [2m465[0m |     </div>
+ [2m466[0m |   );
+     : [31;1m  ^[0m
+ [2m467[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Expression expected
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:479:1]
+ [2m479[0m |         </main>
+ [2m480[0m |       </div>
+ [2m481[0m |     </div>
+ [2m482[0m |   );
+     : [31;1m  ^[0m
+ [2m483[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Expression expected
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:479:1]
+ [2m479[0m |         </main>
+ [2m480[0m |       </div>
+ [2m481[0m |     </div>
+ [2m482[0m |   );
+     : [31;1m  ^[0m
+ [2m483[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Expression expected
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:481:1]
+ [2m481[0m |         </main>
+ [2m482[0m |       </div>
+ [2m483[0m |     </div>
+ [2m484[0m |   );
+     : [31;1m  ^[0m
+ [2m485[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     : [31;1m^[0m
+     `----
+
+  [31mx[0m Unexpected eof
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ○ Compiling /dashboard ...
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     : [31;1m^[0m
+     `----
+
+  [31mx[0m Unexpected eof
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     : [31;1m^[0m
+     `----
+
+  [31mx[0m Unexpected eof
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ ⨯ ./app/dashboard/page.js
+Error: 
+  [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     : [31;1m^[0m
+     `----
+
+  [31mx[0m Unexpected eof
+     ,-[[36;1;4m/app/app/dashboard/page.js[0m:513:1]
+ [2m513[0m |       </div>
+ [2m514[0m |     </div>
+ [2m515[0m |   );
+ [2m516[0m | }
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/dashboard/page.js
+ GET /dashboard 500 in 9163ms
+ ✓ Compiled /_error in 376ms (765 modules)
+ ✓ Compiled in 218ms (765 modules)
+ GET /dashboard 500 in 100ms
+ ✓ Compiled in 3.2s (826 modules)
+ ✓ Compiled in 190ms (763 modules)
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 2.2s (1051 modules)
+ HEAD /dashboard 200 in 2443ms
+ ✓ Compiled in 112ms (776 modules)
+ GET /dashboard 200 in 89ms
+ GET /dashboard 200 in 91ms
