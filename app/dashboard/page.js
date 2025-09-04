@@ -249,12 +249,12 @@ export default function Dashboard() {
           <div className={`grid gap-6 ${rightSidebarVisible ? 'grid-cols-12' : 'grid-cols-1'}`}>
             {/* Welcome Section */}
             <div className={rightSidebarVisible ? 'col-span-8' : 'col-span-1'}>
-              <div className="rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm mb-6">
+              <div className="rounded-lg border border-border/10 bg-card/5 p-6 backdrop-blur-sm mb-6">
                 <div className="mb-4">
-                  <span className="text-sm text-gray-400 uppercase tracking-wide">WELCOME BACK</span>
+                  <span className="text-sm text-muted-foreground uppercase tracking-wide">WELCOME BACK</span>
                 </div>
                 <h2 className="text-2xl font-bold mb-2">Aarav, ready to move your Backend SWE plan forward?</h2>
-                <p className="text-gray-400 text-sm mb-6">City: Bengaluru • Last session: 06:42 • Scenic Resume: Tailor — Orbit</p>
+                <p className="text-muted-foreground text-sm mb-6">City: Bengaluru • Last session: 06:42 • Scenic Resume: Tailor — Orbit</p>
                 
                 {/* Main Metrics */}
                 <div className="grid grid-cols-4 gap-4">
@@ -284,16 +284,16 @@ export default function Dashboard() {
               {/* Bottom Row Cards */}
               <div className="grid grid-cols-3 gap-4">
                 {/* Resume/ATS Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-gray-200">Resume / ATS</h3>
-                    <span className="text-xs text-gray-400">v3</span>
+                    <h3 className="font-medium text-card-foreground">Resume / ATS</h3>
+                    <span className="text-xs text-muted-foreground">v3</span>
                   </div>
                   <div className="mb-4">
                     <div className="text-lg font-bold">68/100 62%</div>
-                    <div className="text-xs text-gray-400">Readability Keyword</div>
+                    <div className="text-xs text-muted-foreground">Readability Keyword</div>
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     • Table structure • Dense bullets
                   </div>
                   <div className="flex gap-2">
@@ -303,15 +303,15 @@ export default function Dashboard() {
                 </div>
 
                 {/* Career Intelligence Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-gray-200">Career Intelligence</h3>
+                    <h3 className="font-medium text-card-foreground">Career Intelligence</h3>
                   </div>
                   <div className="mb-4">
                     <div className="text-lg font-bold">74%</div>
-                    <div className="text-xs text-gray-400">top percentile 84 • 3% / 30d</div>
+                    <div className="text-xs text-muted-foreground">top percentile 84 • 3% / 30d</div>
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     Focus skills: Kafka • GraphQL • Go
                   </div>
                   <div className="flex gap-2">
@@ -321,15 +321,15 @@ export default function Dashboard() {
                 </div>
 
                 {/* Roadmap Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-gray-200">Roadmap</h3>
+                    <h3 className="font-medium text-card-foreground">Roadmap</h3>
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">This week</div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">This week</div>
+                  <div className="text-xs text-muted-foreground mb-3">
                     Current block: Concurrency → Next due: Wed
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     AT2 complete
                   </div>
                   <div className="flex gap-2 mb-2">
@@ -342,23 +342,23 @@ export default function Dashboard() {
               {/* Second Bottom Row */}
               <div className="grid grid-cols-2 gap-4 mt-4">
                 {/* Modules Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                   <div className="mb-3">
-                    <h3 className="font-medium text-gray-200">Modules</h3>
-                    <div className="text-xs text-gray-400">Tracks</div>
+                    <h3 className="font-medium text-card-foreground">Modules</h3>
+                    <div className="text-xs text-muted-foreground">Tracks</div>
                   </div>
                   <div className="grid grid-cols-3 gap-4 text-center mb-4">
                     <div>
                       <div className="text-2xl font-bold">80</div>
-                      <div className="text-xs text-gray-400">Foundations</div>
+                      <div className="text-xs text-muted-foreground">Foundations</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold">55</div>
-                      <div className="text-xs text-gray-400">Systems</div>
+                      <div className="text-xs text-muted-foreground">Systems</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold">30</div>
-                      <div className="text-xs text-gray-400">Projects</div>
+                      <div className="text-xs text-muted-foreground">Projects</div>
                     </div>
                   </div>
                   <div className="flex gap-2">
@@ -368,15 +368,15 @@ export default function Dashboard() {
                 </div>
 
                 {/* Interview/Jobs Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                   <div className="mb-3">
-                    <h3 className="font-medium text-gray-200">Interview / Jobs</h3>
-                    <div className="text-xs text-gray-400">Pipeline & prep</div>
+                    <h3 className="font-medium text-card-foreground">Interview / Jobs</h3>
+                    <div className="text-xs text-muted-foreground">Pipeline & prep</div>
                   </div>
                   <div className="flex items-center justify-center mb-4">
                     <CircularProgress percentage={76} size="small" />
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     Upcoming 2  Referrals 1
                   </div>
                   <div className="flex gap-2">
@@ -388,16 +388,16 @@ export default function Dashboard() {
 
               {/* Bottom Section */}
               <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                  <h3 className="font-medium text-gray-200 mb-3">Quick Tips</h3>
-                  <div className="text-sm text-gray-400">High-leverage actions</div>
+                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                  <h3 className="font-medium text-card-foreground mb-3">Quick Tips</h3>
+                  <div className="text-sm text-muted-foreground">High-leverage actions</div>
                 </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                  <h3 className="font-medium text-gray-200 mb-3">Pinned & Recent</h3>
-                  <div className="text-sm text-gray-400">Jump back in</div>
+                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                  <h3 className="font-medium text-card-foreground mb-3">Pinned & Recent</h3>
+                  <div className="text-sm text-muted-foreground">Jump back in</div>
                   <div className="mt-2">
-                    <div className="text-xs text-gray-400 mb-1">PINNED</div>
-                    <div className="text-xs text-gray-400">RECENT</div>
+                    <div className="text-xs text-muted-foreground mb-1">PINNED</div>
+                    <div className="text-xs text-muted-foreground">RECENT</div>
                   </div>
                 </div>
               </div>
@@ -408,62 +408,62 @@ export default function Dashboard() {
               <aside className="col-span-4 transition-all duration-300">
                 <div className="space-y-4">
                   {/* Readiness Card */}
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-medium text-gray-200">Readiness</h3>
-                      <span className="text-xs text-gray-400">76%</span>
+                      <h3 className="font-medium text-card-foreground">Readiness</h3>
+                      <span className="text-xs text-muted-foreground">76%</span>
                     </div>
                     <div className="mb-4">
-                      <div className="text-xs text-gray-400 mb-2">Composite Signal</div>
+                      <div className="text-xs text-muted-foreground mb-2">Composite Signal</div>
                       <CircularProgress percentage={76} />
                     </div>
                   </div>
 
                   {/* Coverage & Projects */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-gray-400 mb-1">COVERAGE</div>
+                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-muted-foreground mb-1">COVERAGE</div>
                       <div className="text-2xl font-bold">72%</div>
                     </div>
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-gray-400 mb-1">PROJECTS</div>
+                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-muted-foreground mb-1">PROJECTS</div>
                       <div className="text-2xl font-bold">3</div>
                     </div>
                   </div>
 
                   {/* Assessments & Active Days */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-gray-400 mb-1">ASSESSMENTS</div>
+                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-muted-foreground mb-1">ASSESSMENTS</div>
                       <div className="text-2xl font-bold">5</div>
                     </div>
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-gray-400 mb-1">ACTIVE DAYS</div>
+                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-muted-foreground mb-1">ACTIVE DAYS</div>
                       <div className="text-2xl font-bold">18</div>
                     </div>
                   </div>
 
                   {/* Skill Radar */}
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                     <div className="mb-3">
-                      <h3 className="font-medium text-gray-200">Skill Radar</h3>
-                      <div className="text-xs text-gray-400">Top categories</div>
+                      <h3 className="font-medium text-card-foreground">Skill Radar</h3>
+                      <div className="text-xs text-muted-foreground">Top categories</div>
                     </div>
                     <SkillRadarChart />
-                    <div className="text-xs text-gray-400 text-center mt-2">Foundations</div>
+                    <div className="text-xs text-muted-foreground text-center mt-2">Foundations</div>
                   </div>
 
                   {/* Learning Velocity */}
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
                     <div className="mb-3">
-                      <h3 className="font-medium text-gray-200">Learning Velocity</h3>
-                      <div className="text-xs text-gray-400">Weekly hours (12w)</div>
+                      <h3 className="font-medium text-card-foreground">Learning Velocity</h3>
+                      <div className="text-xs text-muted-foreground">Weekly hours (12w)</div>
                     </div>
                     <div className="h-24 flex items-end justify-center">
                       <svg viewBox="0 0 100 50" className="w-full h-full">
                         <polyline
                           fill="none"
-                          stroke="rgba(255,255,255,0.6)"
+                          stroke="rgb(var(--primary) / 0.6)"
                           strokeWidth="2"
                           points="10,40 20,35 30,30 40,25 50,20 60,15 70,20 80,15 90,10"
                         />
