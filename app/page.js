@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 const bgGrid = {
   backgroundImage:
-    "linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px)",
+    "linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px)",
   backgroundSize: "36px 36px",
   backgroundPosition: "center",
 };
