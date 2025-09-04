@@ -282,21 +282,21 @@ export default function Dashboard() {
               {/* Bottom Row Cards */}
               <div className="grid grid-cols-3 gap-4">
                 {/* Resume/ATS Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-white">Resume / ATS</h3>
-                    <span className="text-xs text-gray-400">v3</span>
+                    <h3 className="font-medium text-card-foreground">Resume / ATS</h3>
+                    <span className="text-xs text-muted-foreground">v3</span>
                   </div>
                   <div className="mb-4">
-                    <div className="text-lg font-bold text-white">68/100 62%</div>
-                    <div className="text-xs text-gray-400">Readability Keyword</div>
+                    <div className="text-lg font-bold text-card-foreground">68/100 62%</div>
+                    <div className="text-xs text-muted-foreground">Readability Keyword</div>
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     • Table structure • Dense bullets
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Export</Button>
-                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Fix Issues</Button>
+                    <Button size="sm" variant="secondary" className="text-xs">Export</Button>
+                    <Button size="sm" variant="outline" className="text-xs">Fix Issues</Button>
                   </div>
                 </div>
 
