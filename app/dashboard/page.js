@@ -250,9 +250,9 @@ export default function Dashboard() {
 
         {/* Main Content */}
         <main className="flex-1 p-6">
-          <div className="grid grid-cols-12 gap-6">
+          <div className={`grid gap-6 ${rightSidebarVisible ? 'grid-cols-12' : 'grid-cols-1'}`}>
             {/* Welcome Section */}
-            <div className="col-span-8">
+            <div className={rightSidebarVisible ? 'col-span-8' : 'col-span-1'}>
               <div className="rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm mb-6">
                 <div className="mb-4">
                   <span className="text-sm text-gray-400 uppercase tracking-wide">WELCOME BACK</span>
