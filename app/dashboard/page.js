@@ -170,7 +170,14 @@ export default function Dashboard() {
           </div>
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" className="text-gray-300">New</Button>
-            <Button variant="ghost" size="sm" className="text-gray-300">Insights</Button>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className={`text-gray-300 ${rightSidebarVisible ? 'bg-white/10' : ''}`}
+              onClick={toggleRightSidebar}
+            >
+              Insights
+            </Button>
             <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
               <span className="text-xs">A</span>
             </div>
