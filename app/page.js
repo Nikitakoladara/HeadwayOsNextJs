@@ -172,7 +172,7 @@ function Chip({ active, label, onToggle }) {
     <button
       onClick={onToggle}
       className={`min-w-[88px] rounded-md border px-3 py-2 text-sm transition ${
-        active ? "border-white/20 bg-white/10" : "border-white/10 bg-white/5 hover:bg-white/10"
+        active ? "border-primary bg-accent text-accent-foreground" : "border-border bg-secondary text-secondary-foreground hover:bg-accent"
       }`}
     >
       {label}
@@ -210,8 +210,8 @@ function QuickReplyPill({ text, onClick, selected = false }) {
       onClick={onClick}
       className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${
         selected 
-          ? 'border-white/30 bg-white/20 text-gray-100' 
-          : 'border-white/10 bg-white/5 text-gray-300 hover:bg-white/10'
+          ? 'border-primary bg-accent text-accent-foreground' 
+          : 'border-border bg-secondary text-secondary-foreground hover:bg-accent'
       }`}
     >
       {text}
