@@ -5,17 +5,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
-// Dashboard metric components
+// Dashboard metric components with enhanced dark mode design
 function MetricCard({ title, value, subtitle, percentage, variant = "default" }) {
   return (
-    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
       <div className="space-y-2">
-        <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">{title}</h3>
+        <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wide">{title}</h3>
         <div className="space-y-1">
-          <div className="text-2xl font-bold text-foreground">{value}</div>
-          {subtitle && <div className="text-xs text-muted-foreground">{subtitle}</div>}
+          <div className="text-2xl font-bold text-white">{value}</div>
+          {subtitle && <div className="text-xs text-gray-400">{subtitle}</div>}
           {percentage && (
-            <div className="text-sm text-foreground/80">{percentage}</div>
+            <div className="text-sm text-gray-300">{percentage}</div>
           )}
         </div>
       </div>
@@ -39,7 +39,7 @@ function CircularProgress({ percentage, size = "large" }) {
             cx="50"
             cy="50"
             r={radius}
-            stroke="rgb(var(--muted-foreground) / 0.2)"
+            stroke="rgba(255,255,255,0.1)"
             strokeWidth="6"
             fill="none"
           />
@@ -47,7 +47,7 @@ function CircularProgress({ percentage, size = "large" }) {
             cx="50"
             cy="50"
             r={radius}
-            stroke="rgb(var(--primary) / 0.8)"
+            stroke="#60a5fa"
             strokeWidth="6"
             fill="none"
             strokeLinecap="round"
@@ -58,7 +58,7 @@ function CircularProgress({ percentage, size = "large" }) {
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-xl font-bold text-foreground">{percentage}%</span>
+          <span className="text-xl font-bold text-white">{percentage}%</span>
         </div>
       </div>
     </div>
@@ -71,8 +71,8 @@ function SidebarNavItem({ icon, label, active = false, onClick, isExpanded }) {
       onClick={onClick}
       className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all ${
         active 
-          ? 'bg-primary/20 text-primary border border-primary/20' 
-          : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+          ? 'bg-blue-600/20 text-blue-400 border border-blue-600/30' 
+          : 'text-gray-400 hover:bg-white/10 hover:text-gray-300'
       } ${!isExpanded ? 'justify-center' : ''}`}
     >
       <div className="w-5 h-5 flex items-center justify-center">
@@ -99,21 +99,21 @@ function SkillRadarChart() {
         <polygon
           points="50,20 80,40 70,80 30,80 20,40"
           fill="none"
-          stroke="rgb(var(--border) / 0.3)"
+          stroke="rgba(255,255,255,0.2)"
           strokeWidth="0.5"
         />
         <polygon
           points="50,35 65,45 60,65 40,65 35,45"
           fill="none"
-          stroke="rgb(var(--border) / 0.2)"
+          stroke="rgba(255,255,255,0.1)"
           strokeWidth="0.5"
         />
         
         {/* Data area */}
         <polygon
           points="50,25 75,42 65,75 35,75 25,42"
-          fill="rgb(var(--primary) / 0.1)"
-          stroke="rgb(var(--primary) / 0.4)"
+          fill="rgba(96,165,250,0.1)"
+          stroke="rgba(96,165,250,0.4)"
           strokeWidth="1"
         />
         
@@ -123,7 +123,7 @@ function SkillRadarChart() {
             key={i}
             x={point.x}
             y={point.y}
-            className="text-xs fill-muted-foreground"
+            className="text-xs fill-gray-300"
             textAnchor="middle"
             dominantBaseline="middle"
           >
@@ -163,16 +163,16 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white">New</Button>
+            <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10">New</Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className={`text-gray-300 hover:text-white transition-all ${rightSidebarVisible ? 'bg-white/10' : ''}`}
+              className={`text-gray-300 hover:text-white transition-all ${rightSidebarVisible ? 'bg-white/10' : ''} hover:bg-white/10`}
               onClick={toggleRightSidebar}
             >
               Insights
             </Button>
-            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-all cursor-pointer">
               <span className="text-xs text-white">A</span>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function Dashboard() {
 
       <div className="flex">
         {/* Left Sidebar */}
-        <aside className={`${sidebarExpanded ? 'w-64' : 'w-16'} min-h-screen border-r border-border bg-sidebar backdrop-blur-sm p-4 transition-all duration-300`}>
+        <aside className={`${sidebarExpanded ? 'w-64' : 'w-16'} min-h-screen border-r border-white/10 bg-black/20 backdrop-blur-sm p-4 transition-all duration-300`}>
           <nav className="space-y-2">
             <SidebarNavItem 
               icon="🏠" 
@@ -247,12 +247,12 @@ export default function Dashboard() {
           <div className={`grid gap-6 ${rightSidebarVisible ? 'grid-cols-12' : 'grid-cols-1'}`}>
             {/* Welcome Section */}
             <div className={rightSidebarVisible ? 'col-span-8' : 'col-span-1'}>
-              <div className="rounded-lg border border-border/10 bg-card/5 p-6 backdrop-blur-sm mb-6">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm mb-6 hover:bg-white/10 transition-all">
                 <div className="mb-4">
-                  <span className="text-sm text-muted-foreground uppercase tracking-wide">WELCOME BACK</span>
+                  <span className="text-sm text-gray-400 uppercase tracking-wide">WELCOME BACK</span>
                 </div>
-                <h2 className="text-2xl font-bold mb-2">Aarav, ready to move your Backend SWE plan forward?</h2>
-                <p className="text-muted-foreground text-sm mb-6">City: Bengaluru • Last session: 06:42 • Scenic Resume: Tailor — Orbit</p>
+                <h2 className="text-2xl font-bold mb-2 text-white">Aarav, ready to move your Backend SWE plan forward?</h2>
+                <p className="text-gray-400 text-sm mb-6">City: Bengaluru • Last session: 06:42 • Scenic Resume: Tailor — Orbit</p>
                 
                 {/* Main Metrics */}
                 <div className="grid grid-cols-4 gap-4">
@@ -282,57 +282,57 @@ export default function Dashboard() {
               {/* Bottom Row Cards */}
               <div className="grid grid-cols-3 gap-4">
                 {/* Resume/ATS Card */}
-                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-card-foreground">Resume / ATS</h3>
-                    <span className="text-xs text-muted-foreground">v3</span>
+                    <h3 className="font-medium text-white">Resume / ATS</h3>
+                    <span className="text-xs text-gray-400">v3</span>
                   </div>
                   <div className="mb-4">
-                    <div className="text-lg font-bold">68/100 62%</div>
-                    <div className="text-xs text-muted-foreground">Readability Keyword</div>
+                    <div className="text-lg font-bold text-white">68/100 62%</div>
+                    <div className="text-xs text-gray-400">Readability Keyword</div>
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">
+                  <div className="text-xs text-gray-400 mb-3">
                     • Table structure • Dense bullets
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Export</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Fix Issues</Button>
+                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Export</Button>
+                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Fix Issues</Button>
                   </div>
                 </div>
 
                 {/* Career Intelligence Card */}
-                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-card-foreground">Career Intelligence</h3>
+                    <h3 className="font-medium text-white">Career Intelligence</h3>
                   </div>
                   <div className="mb-4">
-                    <div className="text-lg font-bold">74%</div>
-                    <div className="text-xs text-muted-foreground">top percentile 84 • 3% / 30d</div>
+                    <div className="text-lg font-bold text-white">74%</div>
+                    <div className="text-xs text-gray-400">top percentile 84 • 3% / 30d</div>
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">
+                  <div className="text-xs text-gray-400 mb-3">
                     Focus skills: Kafka • GraphQL • Go
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Open Intelligence</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Add Skill</Button>
+                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Open Intelligence</Button>
+                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Add Skill</Button>
                   </div>
                 </div>
 
                 {/* Roadmap Card */}
-                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-card-foreground">Roadmap</h3>
+                    <h3 className="font-medium text-white">Roadmap</h3>
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">This week</div>
-                  <div className="text-xs text-muted-foreground mb-3">
+                  <div className="text-xs text-gray-400 mb-3">This week</div>
+                  <div className="text-xs text-gray-400 mb-3">
                     Current block: Concurrency → Next due: Wed
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">
+                  <div className="text-xs text-gray-400 mb-3">
                     AT2 complete
                   </div>
                   <div className="flex gap-2 mb-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Adjust destination</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Open</Button>
+                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Adjust destination</Button>
+                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Open</Button>
                   </div>
                 </div>
               </div>
@@ -340,62 +340,62 @@ export default function Dashboard() {
               {/* Second Bottom Row */}
               <div className="grid grid-cols-2 gap-4 mt-4">
                 {/* Modules Card */}
-                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                   <div className="mb-3">
-                    <h3 className="font-medium text-card-foreground">Modules</h3>
-                    <div className="text-xs text-muted-foreground">Tracks</div>
+                    <h3 className="font-medium text-white">Modules</h3>
+                    <div className="text-xs text-gray-400">Tracks</div>
                   </div>
                   <div className="grid grid-cols-3 gap-4 text-center mb-4">
                     <div>
-                      <div className="text-2xl font-bold">80</div>
-                      <div className="text-xs text-muted-foreground">Foundations</div>
+                      <div className="text-2xl font-bold text-white">80</div>
+                      <div className="text-xs text-gray-400">Foundations</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold">55</div>
-                      <div className="text-xs text-muted-foreground">Systems</div>
+                      <div className="text-2xl font-bold text-white">55</div>
+                      <div className="text-xs text-gray-400">Systems</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold">30</div>
-                      <div className="text-xs text-muted-foreground">Projects</div>
+                      <div className="text-2xl font-bold text-white">30</div>
+                      <div className="text-xs text-gray-400">Projects</div>
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">View Modules</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Generate quiz</Button>
+                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">View Modules</Button>
+                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Generate quiz</Button>
                   </div>
                 </div>
 
                 {/* Interview/Jobs Card */}
-                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                   <div className="mb-3">
-                    <h3 className="font-medium text-card-foreground">Interview / Jobs</h3>
-                    <div className="text-xs text-muted-foreground">Pipeline & prep</div>
+                    <h3 className="font-medium text-white">Interview / Jobs</h3>
+                    <div className="text-xs text-gray-400">Pipeline & prep</div>
                   </div>
                   <div className="flex items-center justify-center mb-4">
                     <CircularProgress percentage={76} size="small" />
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">
+                  <div className="text-xs text-gray-400 mb-3">
                     Upcoming 2  Referrals 1
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Open Pipeline</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Prepare</Button>
+                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Open Pipeline</Button>
+                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Prepare</Button>
                   </div>
                 </div>
               </div>
 
               {/* Bottom Section */}
               <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
-                  <h3 className="font-medium text-card-foreground mb-3">Quick Tips</h3>
-                  <div className="text-sm text-muted-foreground">High-leverage actions</div>
+                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                  <h3 className="font-medium text-white mb-3">Quick Tips</h3>
+                  <div className="text-sm text-gray-400">High-leverage actions</div>
                 </div>
-                <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
-                  <h3 className="font-medium text-card-foreground mb-3">Pinned & Recent</h3>
-                  <div className="text-sm text-muted-foreground">Jump back in</div>
+                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                  <h3 className="font-medium text-white mb-3">Pinned & Recent</h3>
+                  <div className="text-sm text-gray-400">Jump back in</div>
                   <div className="mt-2">
-                    <div className="text-xs text-muted-foreground mb-1">PINNED</div>
-                    <div className="text-xs text-muted-foreground">RECENT</div>
+                    <div className="text-xs text-gray-400 mb-1">PINNED</div>
+                    <div className="text-xs text-gray-400">RECENT</div>
                   </div>
                 </div>
               </div>
@@ -406,62 +406,62 @@ export default function Dashboard() {
               <aside className="col-span-4 transition-all duration-300">
                 <div className="space-y-4">
                   {/* Readiness Card */}
-                  <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-medium text-card-foreground">Readiness</h3>
-                      <span className="text-xs text-muted-foreground">76%</span>
+                      <h3 className="font-medium text-white">Readiness</h3>
+                      <span className="text-xs text-gray-400">76%</span>
                     </div>
                     <div className="mb-4">
-                      <div className="text-xs text-muted-foreground mb-2">Composite Signal</div>
+                      <div className="text-xs text-gray-400 mb-2">Composite Signal</div>
                       <CircularProgress percentage={76} />
                     </div>
                   </div>
 
                   {/* Coverage & Projects */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-muted-foreground mb-1">COVERAGE</div>
-                      <div className="text-2xl font-bold">72%</div>
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
+                      <div className="text-xs text-gray-400 mb-1">COVERAGE</div>
+                      <div className="text-2xl font-bold text-white">72%</div>
                     </div>
-                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-muted-foreground mb-1">PROJECTS</div>
-                      <div className="text-2xl font-bold">3</div>
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
+                      <div className="text-xs text-gray-400 mb-1">PROJECTS</div>
+                      <div className="text-2xl font-bold text-white">3</div>
                     </div>
                   </div>
 
                   {/* Assessments & Active Days */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-muted-foreground mb-1">ASSESSMENTS</div>
-                      <div className="text-2xl font-bold">5</div>
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
+                      <div className="text-xs text-gray-400 mb-1">ASSESSMENTS</div>
+                      <div className="text-2xl font-bold text-white">5</div>
                     </div>
-                    <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm text-center">
-                      <div className="text-xs text-muted-foreground mb-1">ACTIVE DAYS</div>
-                      <div className="text-2xl font-bold">18</div>
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
+                      <div className="text-xs text-gray-400 mb-1">ACTIVE DAYS</div>
+                      <div className="text-2xl font-bold text-white">18</div>
                     </div>
                   </div>
 
                   {/* Skill Radar */}
-                  <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                     <div className="mb-3">
-                      <h3 className="font-medium text-card-foreground">Skill Radar</h3>
-                      <div className="text-xs text-muted-foreground">Top categories</div>
+                      <h3 className="font-medium text-white">Skill Radar</h3>
+                      <div className="text-xs text-gray-400">Top categories</div>
                     </div>
                     <SkillRadarChart />
-                    <div className="text-xs text-muted-foreground text-center mt-2">Foundations</div>
+                    <div className="text-xs text-gray-400 text-center mt-2">Foundations</div>
                   </div>
 
                   {/* Learning Velocity */}
-                  <div className="rounded-lg border border-border/10 bg-card/5 p-4 backdrop-blur-sm">
+                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
                     <div className="mb-3">
-                      <h3 className="font-medium text-card-foreground">Learning Velocity</h3>
-                      <div className="text-xs text-muted-foreground">Weekly hours (12w)</div>
+                      <h3 className="font-medium text-white">Learning Velocity</h3>
+                      <div className="text-xs text-gray-400">Weekly hours (12w)</div>
                     </div>
                     <div className="h-24 flex items-end justify-center">
                       <svg viewBox="0 0 100 50" className="w-full h-full">
                         <polyline
                           fill="none"
-                          stroke="rgb(var(--primary) / 0.6)"
+                          stroke="#60a5fa"
                           strokeWidth="2"
                           points="10,40 20,35 30,30 40,25 50,20 60,15 70,20 80,15 90,10"
                         />
