@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Use dark mode only throughout the application, remove light mode toggle, and enhance the overall dark design"
+user_problem_statement: "Match the color theme code for popup form and modernize the dashboard UI using the provided comprehensive color theme system with light and dark mode support"
 
 frontend:
   - task: "Dark Mode Only Implementation"
