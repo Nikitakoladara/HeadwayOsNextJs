@@ -408,73 +408,75 @@ export default function Dashboard() {
             </div>
 
             {/* Right Sidebar */}
-            <aside className="col-span-4">
-              <div className="space-y-4">
-                {/* Readiness Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-gray-200">Readiness</h3>
-                    <span className="text-xs text-gray-400">76%</span>
+            {rightSidebarVisible && (
+              <aside className="col-span-4 transition-all duration-300">
+                <div className="space-y-4">
+                  {/* Readiness Card */}
+                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="font-medium text-gray-200">Readiness</h3>
+                      <span className="text-xs text-gray-400">76%</span>
+                    </div>
+                    <div className="mb-4">
+                      <div className="text-xs text-gray-400 mb-2">Composite Signal</div>
+                      <CircularProgress percentage={76} />
+                    </div>
                   </div>
-                  <div className="mb-4">
-                    <div className="text-xs text-gray-400 mb-2">Composite Signal</div>
-                    <CircularProgress percentage={76} />
-                  </div>
-                </div>
 
-                {/* Coverage & Projects */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                    <div className="text-xs text-gray-400 mb-1">COVERAGE</div>
-                    <div className="text-2xl font-bold">72%</div>
+                  {/* Coverage & Projects */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-gray-400 mb-1">COVERAGE</div>
+                      <div className="text-2xl font-bold">72%</div>
+                    </div>
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-gray-400 mb-1">PROJECTS</div>
+                      <div className="text-2xl font-bold">3</div>
+                    </div>
                   </div>
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                    <div className="text-xs text-gray-400 mb-1">PROJECTS</div>
-                    <div className="text-2xl font-bold">3</div>
-                  </div>
-                </div>
 
-                {/* Assessments & Active Days */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                    <div className="text-xs text-gray-400 mb-1">ASSESSMENTS</div>
-                    <div className="text-2xl font-bold">5</div>
+                  {/* Assessments & Active Days */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-gray-400 mb-1">ASSESSMENTS</div>
+                      <div className="text-2xl font-bold">5</div>
+                    </div>
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
+                      <div className="text-xs text-gray-400 mb-1">ACTIVE DAYS</div>
+                      <div className="text-2xl font-bold">18</div>
+                    </div>
                   </div>
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center">
-                    <div className="text-xs text-gray-400 mb-1">ACTIVE DAYS</div>
-                    <div className="text-2xl font-bold">18</div>
-                  </div>
-                </div>
 
-                {/* Skill Radar */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                  <div className="mb-3">
-                    <h3 className="font-medium text-gray-200">Skill Radar</h3>
-                    <div className="text-xs text-gray-400">Top categories</div>
+                  {/* Skill Radar */}
+                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                    <div className="mb-3">
+                      <h3 className="font-medium text-gray-200">Skill Radar</h3>
+                      <div className="text-xs text-gray-400">Top categories</div>
+                    </div>
+                    <SkillRadarChart />
+                    <div className="text-xs text-gray-400 text-center mt-2">Foundations</div>
                   </div>
-                  <SkillRadarChart />
-                  <div className="text-xs text-gray-400 text-center mt-2">Foundations</div>
-                </div>
 
-                {/* Learning Velocity */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                  <div className="mb-3">
-                    <h3 className="font-medium text-gray-200">Learning Velocity</h3>
-                    <div className="text-xs text-gray-400">Weekly hours (12w)</div>
-                  </div>
-                  <div className="h-24 flex items-end justify-center">
-                    <svg viewBox="0 0 100 50" className="w-full h-full">
-                      <polyline
-                        fill="none"
-                        stroke="rgba(255,255,255,0.6)"
-                        strokeWidth="2"
-                        points="10,40 20,35 30,30 40,25 50,20 60,15 70,20 80,15 90,10"
-                      />
-                    </svg>
+                  {/* Learning Velocity */}
+                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                    <div className="mb-3">
+                      <h3 className="font-medium text-gray-200">Learning Velocity</h3>
+                      <div className="text-xs text-gray-400">Weekly hours (12w)</div>
+                    </div>
+                    <div className="h-24 flex items-end justify-center">
+                      <svg viewBox="0 0 100 50" className="w-full h-full">
+                        <polyline
+                          fill="none"
+                          stroke="rgba(255,255,255,0.6)"
+                          strokeWidth="2"
+                          points="10,40 20,35 30,30 40,25 50,20 60,15 70,20 80,15 90,10"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </aside>
+              </aside>
+            )}
           </div>
         </main>
       </div>
