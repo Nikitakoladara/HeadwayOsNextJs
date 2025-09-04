@@ -71,8 +71,8 @@ function SidebarNavItem({ icon, label, active = false, onClick, isExpanded }) {
       onClick={onClick}
       className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all ${
         active 
-          ? 'bg-blue-600/20 text-blue-400 border border-blue-600/30' 
-          : 'text-gray-400 hover:bg-white/10 hover:text-gray-300'
+          ? 'bg-sidebar-accent text-sidebar-accent-foreground border border-sidebar-border' 
+          : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
       } ${!isExpanded ? 'justify-center' : ''}`}
     >
       <div className="w-5 h-5 flex items-center justify-center">
