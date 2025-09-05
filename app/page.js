@@ -246,17 +246,17 @@ function GenerationStep({ step, completed, active }) {
 
 function PlanPreviewCard({ title, count, items }) {
   return (
-    <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+    <div className="rounded-lg border border-border bg-secondary/5 p-4">
       <div className="mb-3 flex items-center justify-between">
-        <h4 className="font-medium text-gray-200">{title}</h4>
-        <span className="text-xs text-gray-400">{count} items</span>
+        <h4 className="font-medium text-foreground">{title}</h4>
+        <span className="text-xs text-muted-foreground">{count} items</span>
       </div>
       <div className="space-y-2">
         {items.slice(0, 3).map((item, i) => (
-          <div key={i} className="text-sm text-gray-400">• {item}</div>
+          <div key={i} className="text-sm text-muted-foreground">• {item}</div>
         ))}
         {items.length > 3 && (
-          <div className="text-xs text-gray-500">+{items.length - 3} more</div>
+          <div className="text-xs text-muted-foreground">+{items.length - 3} more</div>
         )}
       </div>
     </div>
