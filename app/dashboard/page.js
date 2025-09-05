@@ -303,38 +303,38 @@ export default function Dashboard() {
                 </div>
 
                 {/* Career Intelligence Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-white">Career Intelligence</h3>
+                    <h3 className="font-medium text-card-foreground">Career Intelligence</h3>
                   </div>
                   <div className="mb-4">
-                    <div className="text-lg font-bold text-white">74%</div>
-                    <div className="text-xs text-gray-400">top percentile 84 • 3% / 30d</div>
+                    <div className="text-lg font-bold text-card-foreground">74%</div>
+                    <div className="text-xs text-muted-foreground">top percentile 84 • 3% / 30d</div>
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     Focus skills: Kafka • GraphQL • Go
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Open Intelligence</Button>
-                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Add Skill</Button>
+                    <Button size="sm" variant="secondary" className="text-xs">Open Intelligence</Button>
+                    <Button size="sm" variant="outline" className="text-xs">Add Skill</Button>
                   </div>
                 </div>
 
                 {/* Roadmap Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-white">Roadmap</h3>
+                    <h3 className="font-medium text-card-foreground">Roadmap</h3>
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">This week</div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">This week</div>
+                  <div className="text-xs text-muted-foreground mb-3">
                     Current block: Concurrency → Next due: Wed
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     AT2 complete
                   </div>
                   <div className="flex gap-2 mb-2">
-                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Adjust destination</Button>
-                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Open</Button>
+                    <Button size="sm" variant="secondary" className="text-xs">Adjust destination</Button>
+                    <Button size="sm" variant="outline" className="text-xs">Open</Button>
                   </div>
                 </div>
               </div>
