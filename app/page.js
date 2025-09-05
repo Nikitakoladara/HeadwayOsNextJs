@@ -212,8 +212,8 @@ function QuickReplyPill({ text, onClick, selected = false }) {
       onClick={onClick}
       className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${
         selected 
-          ? 'border-white/30 bg-white/20 text-gray-100' 
-          : 'border-white/10 bg-white/5 text-gray-300 hover:bg-white/10'
+          ? 'border-border bg-accent text-accent-foreground' 
+          : 'border-border bg-secondary/5 text-muted-foreground hover:bg-secondary/10'
       }`}
     >
       {text}
@@ -223,10 +223,10 @@ function QuickReplyPill({ text, onClick, selected = false }) {
 
 function SkillChip({ skill, onRemove }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-1 text-sm text-gray-100">
+    <div className="inline-flex items-center gap-2 rounded-md border border-border bg-accent px-3 py-1 text-sm text-accent-foreground">
       <span>{skill.name}</span>
       <span className="text-xs opacity-60">({skill.level})</span>
-      <button onClick={onRemove} className="ml-1 text-gray-400 hover:text-gray-200">×</button>
+      <button onClick={onRemove} className="ml-1 text-muted-foreground hover:text-foreground">×</button>
     </div>
   );
 }
