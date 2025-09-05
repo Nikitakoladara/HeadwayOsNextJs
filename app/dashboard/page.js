@@ -362,21 +362,35 @@ export default function Dashboard() {
               {/* Bottom Row Cards */}
               <div className="grid grid-cols-3 gap-4">
                 {/* Resume/ATS Card */}
-                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+                <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-card-foreground">Resume / ATS</h3>
-                    <span className="text-xs text-muted-foreground">v3</span>
+                    <h3 className="font-medium text-white">Resume / ATS</h3>
+                    <span className="text-xs text-white/60">v3</span>
                   </div>
                   <div className="mb-4">
-                    <div className="text-lg font-bold text-card-foreground">68/100 62%</div>
-                    <div className="text-xs text-muted-foreground">Readability Keyword</div>
+                    <div className="text-lg font-bold text-white">{dashboardData.metrics.atsScore}/100 62%</div>
+                    <div className="text-xs text-white/60">Readability Keyword</div>
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">
+                  <div className="text-xs text-white/60 mb-3">
                     • Table structure • Dense bullets
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Export</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Fix Issues</Button>
+                    <Button 
+                      size="sm" 
+                      variant="secondary" 
+                      className="text-xs bg-white/10 text-white hover:bg-white/20"
+                      onClick={() => alert('Export functionality - Resume exported!')}
+                    >
+                      Export
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="text-xs border-white/20 text-white hover:bg-white/10"
+                      onClick={() => updateMetrics('atsScore', Math.min(dashboardData.metrics.atsScore + 5, 100))}
+                    >
+                      Fix Issues
+                    </Button>
                   </div>
                 </div>
 
