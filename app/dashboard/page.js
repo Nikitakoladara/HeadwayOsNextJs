@@ -408,56 +408,56 @@ export default function Dashboard() {
               <aside className="col-span-4 transition-all duration-300">
                 <div className="space-y-4">
                   {/* Readiness Card */}
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                  <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-medium text-white">Readiness</h3>
-                      <span className="text-xs text-gray-400">76%</span>
+                      <h3 className="font-medium text-card-foreground">Readiness</h3>
+                      <span className="text-xs text-muted-foreground">76%</span>
                     </div>
                     <div className="mb-4">
-                      <div className="text-xs text-gray-400 mb-2">Composite Signal</div>
+                      <div className="text-xs text-muted-foreground mb-2">Composite Signal</div>
                       <CircularProgress percentage={76} />
                     </div>
                   </div>
 
                   {/* Coverage & Projects */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
-                      <div className="text-xs text-gray-400 mb-1">COVERAGE</div>
-                      <div className="text-2xl font-bold text-white">72%</div>
+                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
+                      <div className="text-xs text-muted-foreground mb-1">COVERAGE</div>
+                      <div className="text-2xl font-bold text-card-foreground">72%</div>
                     </div>
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
-                      <div className="text-xs text-gray-400 mb-1">PROJECTS</div>
-                      <div className="text-2xl font-bold text-white">3</div>
+                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
+                      <div className="text-xs text-muted-foreground mb-1">PROJECTS</div>
+                      <div className="text-2xl font-bold text-card-foreground">3</div>
                     </div>
                   </div>
 
                   {/* Assessments & Active Days */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
-                      <div className="text-xs text-gray-400 mb-1">ASSESSMENTS</div>
-                      <div className="text-2xl font-bold text-white">5</div>
+                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
+                      <div className="text-xs text-muted-foreground mb-1">ASSESSMENTS</div>
+                      <div className="text-2xl font-bold text-card-foreground">5</div>
                     </div>
-                    <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm text-center hover:bg-white/10 transition-all">
-                      <div className="text-xs text-gray-400 mb-1">ACTIVE DAYS</div>
-                      <div className="text-2xl font-bold text-white">18</div>
+                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
+                      <div className="text-xs text-muted-foreground mb-1">ACTIVE DAYS</div>
+                      <div className="text-2xl font-bold text-card-foreground">18</div>
                     </div>
                   </div>
 
                   {/* Skill Radar */}
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                  <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                     <div className="mb-3">
-                      <h3 className="font-medium text-white">Skill Radar</h3>
-                      <div className="text-xs text-gray-400">Top categories</div>
+                      <h3 className="font-medium text-card-foreground">Skill Radar</h3>
+                      <div className="text-xs text-muted-foreground">Top categories</div>
                     </div>
                     <SkillRadarChart />
-                    <div className="text-xs text-gray-400 text-center mt-2">Foundations</div>
+                    <div className="text-xs text-muted-foreground text-center mt-2">Foundations</div>
                   </div>
 
                   {/* Learning Velocity */}
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                  <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                     <div className="mb-3">
-                      <h3 className="font-medium text-white">Learning Velocity</h3>
-                      <div className="text-xs text-gray-400">Weekly hours (12w)</div>
+                      <h3 className="font-medium text-card-foreground">Learning Velocity</h3>
+                      <div className="text-xs text-muted-foreground">Weekly hours (12w)</div>
                     </div>
                     <div className="h-24 flex items-end justify-center">
                       <svg viewBox="0 0 100 50" className="w-full h-full">
