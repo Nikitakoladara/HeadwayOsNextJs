@@ -100,21 +100,21 @@ function SkillRadarChart() {
         <polygon
           points="50,20 80,40 70,80 30,80 20,40"
           fill="none"
-          stroke="rgba(255,255,255,0.2)"
+          stroke="rgb(var(--border))"
           strokeWidth="0.5"
         />
         <polygon
           points="50,35 65,45 60,65 40,65 35,45"
           fill="none"
-          stroke="rgba(255,255,255,0.1)"
+          stroke="rgb(var(--muted))"
           strokeWidth="0.5"
         />
         
         {/* Data area */}
         <polygon
           points="50,25 75,42 65,75 35,75 25,42"
-          fill="rgba(96,165,250,0.1)"
-          stroke="rgba(96,165,250,0.4)"
+          fill="rgb(var(--chart-2) / 0.1)"
+          stroke="rgb(var(--chart-2) / 0.4)"
           strokeWidth="1"
         />
         
@@ -124,7 +124,7 @@ function SkillRadarChart() {
             key={i}
             x={point.x}
             y={point.y}
-            className="text-xs fill-gray-300"
+            className="text-xs fill-muted-foreground"
             textAnchor="middle"
             dominantBaseline="middle"
           >
