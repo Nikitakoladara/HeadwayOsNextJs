@@ -174,7 +174,7 @@ function Chip({ active, label, onToggle }) {
     <button
       onClick={onToggle}
       className={`min-w-[88px] rounded-md border px-3 py-2 text-sm transition ${
-        active ? "border-border bg-accent text-accent-foreground" : "border-border bg-secondary/5 text-muted-foreground hover:bg-secondary/10"
+        active ? "border-white/30 bg-white/20 text-white" : "border-white/20 bg-black/30 text-white/80 hover:bg-white/10 hover:text-white"
       }`}
     >
       {label}
