@@ -444,20 +444,47 @@ export default function Dashboard() {
                 </div>
 
                 {/* Roadmap Card */}
-                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+                <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-card-foreground">Roadmap</h3>
+                    <h3 className="font-medium text-white">Roadmap</h3>
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">This week</div>
-                  <div className="text-xs text-muted-foreground mb-3">
-                    Current block: Concurrency → Next due: Wed
-                  </div>
-                  <div className="text-xs text-muted-foreground mb-3">
-                    AT2 complete
-                  </div>
+                  <div className="text-xs text-white/60 mb-3">This week</div>
+                  
+                  {learningPlan && learningPlan.currentWeek ? (
+                    <div className="space-y-2 mb-3">
+                      {learningPlan.currentWeek.tasks.map((task, index) => (
+                        <TaskItem 
+                          key={index}
+                          task={task}
+                          onComplete={completeTask}
+                          index={index}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-xs text-white/60 mb-3">
+                      Current block: Concurrency → Next due: Wed
+                      <br/>AT2 complete
+                    </div>
+                  )}
+                  
                   <div className="flex gap-2 mb-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Adjust destination</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Open</Button>
+                    <Button 
+                      size="sm" 
+                      variant="secondary" 
+                      className="text-xs bg-white/10 text-white hover:bg-white/20"
+                      onClick={() => alert('Adjust destination functionality')}
+                    >
+                      Adjust destination
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="text-xs border-white/20 text-white hover:bg-white/10"
+                      onClick={() => setActiveNavItem("Roadmap")}
+                    >
+                      Open
+                    </Button>
                   </div>
                 </div>
               </div>
