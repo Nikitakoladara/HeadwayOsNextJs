@@ -388,16 +388,16 @@ export default function Dashboard() {
 
               {/* Bottom Section */}
               <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
-                  <h3 className="font-medium text-white mb-3">Quick Tips</h3>
-                  <div className="text-sm text-gray-400">High-leverage actions</div>
+                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+                  <h3 className="font-medium text-card-foreground mb-3">Quick Tips</h3>
+                  <div className="text-sm text-muted-foreground">High-leverage actions</div>
                 </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
-                  <h3 className="font-medium text-white mb-3">Pinned & Recent</h3>
-                  <div className="text-sm text-gray-400">Jump back in</div>
+                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+                  <h3 className="font-medium text-card-foreground mb-3">Pinned & Recent</h3>
+                  <div className="text-sm text-muted-foreground">Jump back in</div>
                   <div className="mt-2">
-                    <div className="text-xs text-gray-400 mb-1">PINNED</div>
-                    <div className="text-xs text-gray-400">RECENT</div>
+                    <div className="text-xs text-muted-foreground mb-1">PINNED</div>
+                    <div className="text-xs text-muted-foreground">RECENT</div>
                   </div>
                 </div>
               </div>
