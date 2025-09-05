@@ -342,46 +342,46 @@ export default function Dashboard() {
               {/* Second Bottom Row */}
               <div className="grid grid-cols-2 gap-4 mt-4">
                 {/* Modules Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                   <div className="mb-3">
-                    <h3 className="font-medium text-white">Modules</h3>
-                    <div className="text-xs text-gray-400">Tracks</div>
+                    <h3 className="font-medium text-card-foreground">Modules</h3>
+                    <div className="text-xs text-muted-foreground">Tracks</div>
                   </div>
                   <div className="grid grid-cols-3 gap-4 text-center mb-4">
                     <div>
-                      <div className="text-2xl font-bold text-white">80</div>
-                      <div className="text-xs text-gray-400">Foundations</div>
+                      <div className="text-2xl font-bold text-card-foreground">80</div>
+                      <div className="text-xs text-muted-foreground">Foundations</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-white">55</div>
-                      <div className="text-xs text-gray-400">Systems</div>
+                      <div className="text-2xl font-bold text-card-foreground">55</div>
+                      <div className="text-xs text-muted-foreground">Systems</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-white">30</div>
-                      <div className="text-xs text-gray-400">Projects</div>
+                      <div className="text-2xl font-bold text-card-foreground">30</div>
+                      <div className="text-xs text-muted-foreground">Projects</div>
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">View Modules</Button>
-                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Generate quiz</Button>
+                    <Button size="sm" variant="secondary" className="text-xs">View Modules</Button>
+                    <Button size="sm" variant="outline" className="text-xs">Generate quiz</Button>
                   </div>
                 </div>
 
                 {/* Interview/Jobs Card */}
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm hover:bg-white/10 transition-all">
+                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
                   <div className="mb-3">
-                    <h3 className="font-medium text-white">Interview / Jobs</h3>
-                    <div className="text-xs text-gray-400">Pipeline & prep</div>
+                    <h3 className="font-medium text-card-foreground">Interview / Jobs</h3>
+                    <div className="text-xs text-muted-foreground">Pipeline & prep</div>
                   </div>
                   <div className="flex items-center justify-center mb-4">
                     <CircularProgress percentage={76} size="small" />
                   </div>
-                  <div className="text-xs text-gray-400 mb-3">
+                  <div className="text-xs text-muted-foreground mb-3">
                     Upcoming 2  Referrals 1
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs bg-gray-700 hover:bg-gray-600 text-white border-gray-600">Open Pipeline</Button>
-                    <Button size="sm" variant="outline" className="text-xs border-gray-600 text-gray-300 hover:bg-gray-700">Prepare</Button>
+                    <Button size="sm" variant="secondary" className="text-xs">Open Pipeline</Button>
+                    <Button size="sm" variant="outline" className="text-xs">Prepare</Button>
                   </div>
                 </div>
               </div>
