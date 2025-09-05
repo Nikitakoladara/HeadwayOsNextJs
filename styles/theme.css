@@ -168,3 +168,47 @@
   transform: translateY(-3px);
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
 }
+
+/* Modern utility classes for consistent design */
+.modern-card-base {
+  @apply rounded-lg border border-white/20 bg-black/60 backdrop-blur-sm;
+  @apply transition-all duration-300 hover:bg-white/10 hover:border-white/30;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modern-button-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/30;
+  @apply bg-white/10 px-4 py-2 font-medium text-white shadow-lg;
+  @apply transition-all hover:bg-white/20 hover:border-white/40 active:scale-95;
+}
+
+.modern-button-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/20;
+  @apply bg-black/30 px-4 py-2 text-white/80;
+  @apply transition-all hover:bg-white/10 hover:text-white hover:border-white/30;
+}
+
+.modern-input {
+  @apply rounded-md border border-white/20 bg-white/5 px-3 py-2 text-white;
+  @apply placeholder:text-white/50 focus:border-white/40 focus:ring-1 focus:ring-white/20;
+  @apply transition-all duration-200;
+}
+
+.modern-text-gradient {
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modern-glow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.modern-sidebar {
+  @apply bg-black/80 border-r border-white/20 backdrop-blur-sm;
+}
+
+.modern-header {
+  @apply border-b border-white/20 bg-black/80 backdrop-blur-sm;
+}
