@@ -331,29 +331,29 @@ export default function Dashboard() {
                 <div className="mb-4">
                   <span className="text-sm text-muted-foreground uppercase tracking-wide">WELCOME BACK</span>
                 </div>
-                <h2 className="text-2xl font-bold mb-2 text-card-foreground">Aarav, ready to move your Backend SWE plan forward?</h2>
-                <p className="text-muted-foreground text-sm mb-6">City: Bengaluru • Last session: 06:42 • Scenic Resume: Tailor — Orbit</p>
+                <h2 className="text-2xl font-bold mb-2 text-white">{getUserName()}, ready to move your {getTargetRole()} plan forward?</h2>
+                <p className="text-white/60 text-sm mb-6">City: {dashboardData.city} • Last session: {dashboardData.lastSession} • {workspace?.name || 'Workspace'}</p>
                 
                 {/* Main Metrics */}
                 <div className="grid grid-cols-4 gap-4">
                   <MetricCard 
                     title="MATCH"
-                    value="68%"
+                    value={dashboardData.metrics.atsScore + "%"}
                     subtitle="ATS"
                   />
                   <MetricCard 
                     title="MARKET FIT"
-                    value="74%"
+                    value={dashboardData.metrics.marketFit + "%"}
                     subtitle="360 + 3%"
                   />
                   <MetricCard 
                     title="INTERVIEWS"
-                    value="2"
+                    value={dashboardData.metrics.interviews}
                     subtitle="scheduled"
                   />
                   <MetricCard 
                     title="MODULES"
-                    value="3"
+                    value={dashboardData.metrics.modulesInProgress}
                     subtitle="in progress"
                   />
                 </div>
