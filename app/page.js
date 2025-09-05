@@ -368,12 +368,20 @@ export default function HeadwayOAuthAndOnboarding() {
     }, 1200);
   }
 
-  // New onboarding form functions
+  function toggleRole(tag) {
+    setRoles((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
+  }
+
+  // New onboarding form functions with localStorage integration
   function updateOnboardingData(section, data) {
-    setOnboardingData(prev => ({
-      ...prev,
-      [section]: { ...prev[section], ...data }
-    }));
+    const newData = {
+      ...onboardingData,
+      [section]: { ...onboardingData[section], ...data }
+    };
+    setOnboardingData(newData);
+    
+    // Save to localStorage
+    localStorage.setItem('onboardingData', JSON.stringify(newData));
   }
 
   function addChatMessage(message, isUser = true) {
@@ -399,6 +407,15 @@ export default function HeadwayOAuthAndOnboarding() {
     if (file) {
       updateOnboardingData('resume', { uploaded: true, fileName: file.name, skipped: false });
       addChatMessage(`Uploaded: ${file.name}`, true);
+      
+      // Store file info (not the actual file for localStorage size limits)
+      const resumeInfo = {
+        name: file.name,
+        size: file.size,
+        type: file.type,
+        uploadedAt: new Date().toISOString()
+      };
+      localStorage.setItem('resumeInfo', JSON.stringify(resumeInfo));
     }
   }
 
@@ -414,11 +431,64 @@ export default function HeadwayOAuthAndOnboarding() {
           return { ...prev, steps: newSteps, currentStep };
         } else {
           clearInterval(interval);
+          
+          // Generate and save personalized plan
+          const personalizedPlan = generatePersonalizedPlan();
+          localStorage.setItem('learningPlan', JSON.stringify(personalizedPlan));
+          
           setTimeout(() => setStage("plan-preview"), 1000);
           return prev;
         }
       });
     }, 800);
+  }
+
+  function generatePersonalizedPlan() {
+    const roles = onboardingData.role.roles;
+    const experience = onboardingData.skills.yoe;
+    const hoursPerWeek = onboardingData.pace.value;
+    
+    // Mock plan generation based on user data
+    const basePlan = {
+      id: 'plan_' + Date.now(),
+      createdAt: new Date().toISOString(),
+      estimatedCompletion: hoursPerWeek >= 10 ? "2-3 months" : hoursPerWeek >= 5 ? "4-6 months" : "6+ months",
+      totalTopics: 7,
+      totalSubtopics: 20,
+      totalResources: 116,
+      weeklyHours: hoursPerWeek,
+      targetRoles: roles,
+      userLevel: experience,
+      modules: [
+        {
+          title: "Frontend Skills",
+          count: 8,
+          items: ["React Fundamentals", "State Management", "Component Patterns", "Performance Optimization", "Testing", "TypeScript", "CSS-in-JS", "Build Tools"],
+          progress: 0
+        },
+        {
+          title: "Backend Skills", 
+          count: 6,
+          items: ["Node.js Basics", "Database Design", "API Development", "Authentication", "Testing", "Deployment"],
+          progress: 0
+        },
+        {
+          title: "DevOps & Tools",
+          count: 6, 
+          items: ["Docker Containers", "CI/CD Pipelines", "Cloud Deployment", "Monitoring", "Version Control", "Infrastructure"],
+          progress: 0
+        }
+      ],
+      currentWeek: {
+        week: 1,
+        tasks: [
+          { name: "JavaScript ES6+ Features", hours: 3, completed: false },
+          { name: "React Component Basics", hours: 2, completed: false }
+        ]
+      }
+    };
+    
+    return basePlan;
   }
 
   return (
