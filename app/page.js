@@ -1223,7 +1223,36 @@ export default function HeadwayOAuthAndOnboarding() {
                     <div>• Estimated completion in {onboardingData.pace.value >= 10 ? "2-3 months" : "4-6 months"}</div>
                   </div>
                 </div>
-                <PrimaryButton onClick={() => router.push("/dashboard")}>Start Learning<IconArrowRight className="ml-1"/></PrimaryButton>
+                <PrimaryButton onClick={() => {
+                  // Save final onboarding completion
+                  const completedProfile = {
+                    ...onboardingData,
+                    completedAt: new Date().toISOString(),
+                    status: 'completed'
+                  };
+                  localStorage.setItem('userProfile', JSON.stringify(completedProfile));
+                  localStorage.setItem('onboardingCompleted', 'true');
+                  
+                  // Initialize dashboard data
+                  const dashboardData = {
+                    metrics: {
+                      atsScore: 68,
+                      marketFit: 74,
+                      interviews: 2,
+                      modulesInProgress: 3,
+                      readiness: 76,
+                      coverage: 72,
+                      projects: 3,
+                      assessments: 5,
+                      activeDays: 18
+                    },
+                    lastSession: new Date().toLocaleString(),
+                    city: "Bengaluru"
+                  };
+                  localStorage.setItem('dashboardData', JSON.stringify(dashboardData));
+                  
+                  router.push("/dashboard");
+                }}>Start Learning<IconArrowRight className="ml-1"/></PrimaryButton>
               </div>
             </FogCard>
           )}
