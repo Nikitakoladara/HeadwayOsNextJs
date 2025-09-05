@@ -310,16 +310,26 @@ export default function HeadwayOAuthAndOnboarding() {
     };
   }, [logo]);
 
-  function toggleRole(tag) {
-    setRoles((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
-  }
-
+  // Mock authentication functions
   function mockAuth() {
     setProcessing(true);
+    // Simulate API call delay
     setTimeout(() => {
+      // Store mock user data
+      const mockUser = {
+        id: 'user_' + Date.now(),
+        email: 'user@example.com',
+        name: 'John Doe',
+        provider: 'google',
+        authenticated: true,
+        createdAt: new Date().toISOString()
+      };
+      localStorage.setItem('user', JSON.stringify(mockUser));
+      localStorage.setItem('isAuthenticated', 'true');
+      
       setProcessing(false);
       setStage("intro");
-    }, 900);
+    }, 1500);
   }
 
   function handleContinue(next) {
@@ -331,11 +341,28 @@ export default function HeadwayOAuthAndOnboarding() {
     if (!file) return;
     const url = URL.createObjectURL(file);
     setLogo(url);
+    
+    // Store logo in localStorage
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      localStorage.setItem('workspaceLogo', e.target.result);
+    };
+    reader.readAsDataURL(file);
   }
 
   function createWorkspace() {
     setProcessing(true);
     setTimeout(() => {
+      // Save workspace data to localStorage
+      const workspaceData = {
+        name: wsName,
+        logo: logo,
+        roles: roles,
+        createdAt: new Date().toISOString(),
+        id: 'workspace_' + Date.now()
+      };
+      localStorage.setItem('workspace', JSON.stringify(workspaceData));
+      
       setProcessing(false);
       setStage("ready");
     }, 1200);

@@ -1,34 +1,37 @@
 yarn run v1.22.22
-$ next dev --hostname 0.0.0.0 --port 3001
+$ next dev --hostname 0.0.0.0 --port 3000
   ▲ Next.js 14.2.3
-  - Local:        http://localhost:3001
-  - Network:      http://0.0.0.0:3001
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 1322ms
+ ✓ Ready in 2.1s
  ○ Compiling / ...
- ✓ Compiled / in 13.1s (1177 modules)
- GET / 200 in 2409ms
- ✓ Compiled in 940ms (596 modules)
- GET / 200 in 896ms
+ ✓ Compiled / in 11s (1177 modules)
+ GET / 200 in 1474ms
+ ✓ Compiled in 841ms (596 modules)
  ○ Compiling /dashboard ...
- ✓ Compiled /dashboard in 1877ms (833 modules)
- GET /dashboard 200 in 2125ms
- GET /dashboard 200 in 101ms
- GET /dashboard 200 in 72ms
- GET /dashboard 200 in 179ms
- ✓ Compiled / in 419ms (598 modules)
- GET / 200 in 746ms
- GET / 200 in 85ms
- GET / 200 in 78ms
- GET / 200 in 89ms
- HEAD / 200 in 27ms
- GET / 200 in 25ms
- GET / 200 in 68ms
- GET / 200 in 82ms
- GET /dashboard 200 in 100ms
- GET /dashboard 200 in 94ms
- GET /dashboard 200 in 82ms
- GET /dashboard 200 in 166ms
- ✓ Compiled in 1943ms (611 modules)
+ ✓ Compiled /dashboard in 2.1s (1194 modules)
+ GET /dashboard 200 in 2264ms
+ GET / 200 in 112ms
+ GET /?x_request_source=preview 200 in 28ms
+ GET /?x_request_source=preview 200 in 28ms
+ ✓ Compiled in 1259ms (611 modules)
+ ✓ Compiled in 801ms (611 modules)
+ ✓ Compiled in 3.6s (1209 modules)
+ ✓ Compiled in 2s (1209 modules)
+ ✓ Compiled in 1201ms (1209 modules)
+ ✓ Compiled in 1319ms (1209 modules)
+ ✓ Compiled in 918ms (1209 modules)
+ ✓ Compiled in 1979ms (1209 modules)
+ ✓ Compiled in 1251ms (1209 modules)
+ ✓ Compiled in 1273ms (1209 modules)
+ GET / 200 in 610ms
+ GET /dashboard 200 in 165ms
+ ✓ Compiled in 2.1s (1209 modules)
+ ✓ Compiled in 1157ms (611 modules)
+ GET / 200 in 214ms
+ GET /dashboard 200 in 113ms
+ GET / 200 in 36ms
+ GET / 200 in 35ms
