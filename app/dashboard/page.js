@@ -140,6 +140,27 @@ export default function Dashboard() {
   const [activeNavItem, setActiveNavItem] = useState("Home");
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const [rightSidebarVisible, setRightSidebarVisible] = useState(true);
+  const [dashboardData, setDashboardData] = useState(null);
+  const [userProfile, setUserProfile] = useState(null);
+  const [learningPlan, setLearningPlan] = useState(null);
+  const [workspace, setWorkspace] = useState(null);
+
+  useEffect(() => {
+    // Load data from localStorage
+    const loadDashboardData = () => {
+      const dashboard = localStorage.getItem('dashboardData');
+      const profile = localStorage.getItem('userProfile');
+      const plan = localStorage.getItem('learningPlan');
+      const ws = localStorage.getItem('workspace');
+      
+      if (dashboard) setDashboardData(JSON.parse(dashboard));
+      if (profile) setUserProfile(JSON.parse(profile));
+      if (plan) setLearningPlan(JSON.parse(plan));
+      if (ws) setWorkspace(JSON.parse(ws));
+    };
+    
+    loadDashboardData();
+  }, []);
 
   const toggleRightSidebar = () => {
     setRightSidebarVisible(!rightSidebarVisible);
@@ -150,6 +171,63 @@ export default function Dashboard() {
     // Toggle sidebar on nav click
     setSidebarExpanded(!sidebarExpanded);
   };
+
+  // Function to update metrics (simulate progress)
+  const updateMetrics = (metricType, value) => {
+    if (dashboardData) {
+      const newData = {
+        ...dashboardData,
+        metrics: {
+          ...dashboardData.metrics,
+          [metricType]: value
+        }
+      };
+      setDashboardData(newData);
+      localStorage.setItem('dashboardData', JSON.stringify(newData));
+    }
+  };
+
+  // Function to mark tasks as completed
+  const completeTask = (taskIndex) => {
+    if (learningPlan) {
+      const newPlan = { ...learningPlan };
+      newPlan.currentWeek.tasks[taskIndex].completed = true;
+      setLearningPlan(newPlan);
+      localStorage.setItem('learningPlan', JSON.stringify(newPlan));
+      
+      // Update progress metrics
+      const completedTasks = newPlan.currentWeek.tasks.filter(task => task.completed).length;
+      const progressPercentage = Math.round((completedTasks / newPlan.currentWeek.tasks.length) * 100);
+      updateMetrics('coverage', Math.min(dashboardData?.metrics?.coverage + 5, 100));
+    }
+  };
+
+  // Get user's name from profile
+  const getUserName = () => {
+    if (userProfile?.role?.roles?.length > 0) {
+      return "Aarav"; // Default name, could be from user data
+    }
+    return "User";
+  };
+
+  // Get target role
+  const getTargetRole = () => {
+    if (userProfile?.role?.roles?.length > 0) {
+      return userProfile.role.roles[0] + " SWE";
+    }
+    return "Backend SWE";
+  };
+
+  if (!dashboardData || !userProfile) {
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p>Loading your dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-black text-white">
