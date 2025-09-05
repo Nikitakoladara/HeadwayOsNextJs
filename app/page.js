@@ -162,7 +162,7 @@ function GhostButton({ children, onClick, disabled }) {
     <button
       onClick={onClick}
       disabled={disabled}
-      className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border bg-secondary/5 px-4 text-secondary-foreground transition hover:bg-secondary/10 active:scale-[.99] disabled:opacity-50"
+      className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-white/20 bg-black/30 px-4 text-white transition hover:bg-white/10 hover:border-white/30 active:scale-[.99] disabled:opacity-50"
     >
       {children}
     </button>
