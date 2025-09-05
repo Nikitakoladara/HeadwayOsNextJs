@@ -84,7 +84,38 @@ function SidebarNavItem({ icon, label, active = false, onClick, isExpanded }) {
   );
 }
 
-function SkillRadarChart() {
+function TaskItem({ task, onComplete, index }) {
+  return (
+    <div className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
+      task.completed 
+        ? 'border-green-500/30 bg-green-500/10' 
+        : 'border-white/20 bg-black/30 hover:bg-white/10'
+    }`}>
+      <div className="flex items-center gap-3">
+        <button
+          onClick={() => onComplete(index)}
+          className={`w-5 h-5 rounded-full border-2 transition-all ${
+            task.completed
+              ? 'bg-green-500 border-green-500'
+              : 'border-white/40 hover:border-white/60'
+          }`}
+        >
+          {task.completed && (
+            <svg className="w-3 h-3 text-white mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+          )}
+        </button>
+        <div>
+          <div className={`text-sm ${task.completed ? 'text-green-400 line-through' : 'text-white'}`}>
+            {task.name}
+          </div>
+          <div className="text-xs text-white/60">{task.hours} hours</div>
+        </div>
+      </div>
+    </div>
+  );
+}
   const points = [
     { label: "API", x: 50, y: 20 },
     { label: "SYS", x: 80, y: 40 },
