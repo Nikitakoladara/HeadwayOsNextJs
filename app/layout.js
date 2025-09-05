@@ -3,7 +3,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata = {
   title: 'HeadwayOS – Get started',
-  description: 'Your journey, in stunning clarity1. Extraordinary career workflow. No design skills required.',
+  description: 'Your journey, in stunning clarity. Extraordinary career workflow. No design skills required.',
 }
 
 export default function RootLayout({ children }) {
