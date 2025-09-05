@@ -500,38 +500,38 @@ export default function Dashboard() {
               <aside className="col-span-4 transition-all duration-300">
                 <div className="space-y-4">
                   {/* Readiness Card */}
-                  <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+                  <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-medium text-card-foreground">Readiness</h3>
-                      <span className="text-xs text-muted-foreground">76%</span>
+                      <h3 className="font-medium text-white">Readiness</h3>
+                      <span className="text-xs text-white/60">{dashboardData.metrics.readiness}%</span>
                     </div>
                     <div className="mb-4">
-                      <div className="text-xs text-muted-foreground mb-2">Composite Signal</div>
-                      <CircularProgress percentage={76} />
+                      <div className="text-xs text-white/60 mb-2">Composite Signal</div>
+                      <CircularProgress percentage={dashboardData.metrics.readiness} />
                     </div>
                   </div>
 
                   {/* Coverage & Projects */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
-                      <div className="text-xs text-muted-foreground mb-1">COVERAGE</div>
-                      <div className="text-2xl font-bold text-card-foreground">72%</div>
+                    <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 text-center hover:bg-white/10 transition-all shadow-lg modern-card">
+                      <div className="text-xs text-white/60 mb-1">COVERAGE</div>
+                      <div className="text-2xl font-bold text-white">{dashboardData.metrics.coverage}%</div>
                     </div>
-                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
-                      <div className="text-xs text-muted-foreground mb-1">PROJECTS</div>
-                      <div className="text-2xl font-bold text-card-foreground">3</div>
+                    <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 text-center hover:bg-white/10 transition-all shadow-lg modern-card">
+                      <div className="text-xs text-white/60 mb-1">PROJECTS</div>
+                      <div className="text-2xl font-bold text-white">{dashboardData.metrics.projects}</div>
                     </div>
                   </div>
 
                   {/* Assessments & Active Days */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
-                      <div className="text-xs text-muted-foreground mb-1">ASSESSMENTS</div>
-                      <div className="text-2xl font-bold text-card-foreground">5</div>
+                    <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 text-center hover:bg-white/10 transition-all shadow-lg modern-card">
+                      <div className="text-xs text-white/60 mb-1">ASSESSMENTS</div>
+                      <div className="text-2xl font-bold text-white">{dashboardData.metrics.assessments}</div>
                     </div>
-                    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm text-center hover:bg-accent transition-all shadow-sm">
-                      <div className="text-xs text-muted-foreground mb-1">ACTIVE DAYS</div>
-                      <div className="text-2xl font-bold text-card-foreground">18</div>
+                    <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 text-center hover:bg-white/10 transition-all shadow-lg modern-card">
+                      <div className="text-xs text-white/60 mb-1">ACTIVE DAYS</div>
+                      <div className="text-2xl font-bold text-white">{dashboardData.metrics.activeDays}</div>
                     </div>
                   </div>
 
