@@ -116,6 +116,7 @@ function TaskItem({ task, onComplete, index }) {
     </div>
   );
 }
+function SkillRadarChart() {
   const points = [
     { label: "API", x: 50, y: 20 },
     { label: "SYS", x: 80, y: 40 },
