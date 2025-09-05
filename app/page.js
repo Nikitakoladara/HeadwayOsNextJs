@@ -395,7 +395,7 @@ export default function HeadwayOAuthAndOnboarding() {
   }
 
   return (
-    <div className="dark relative min-h-screen w-full overflow-hidden bg-background text-foreground" style={bgGrid}>
+    <div className="dark relative min-h-screen w-full overflow-hidden bg-black text-white" style={bgGrid}>
       <NeonCursor />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-10%,rgba(96,165,250,0.05),transparent)]" />
 
