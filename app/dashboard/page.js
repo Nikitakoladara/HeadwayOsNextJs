@@ -9,14 +9,14 @@ import { ThemeToggle } from "@/components/theme-toggle";
 // Dashboard metric components with enhanced dark mode design
 function MetricCard({ title, value, subtitle, percentage, variant = "default" }) {
   return (
-    <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+    <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
       <div className="space-y-2">
-        <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">{title}</h3>
+        <h3 className="text-sm font-medium text-white/80 uppercase tracking-wide">{title}</h3>
         <div className="space-y-1">
-          <div className="text-2xl font-bold text-card-foreground">{value}</div>
-          {subtitle && <div className="text-xs text-muted-foreground">{subtitle}</div>}
+          <div className="text-2xl font-bold text-white">{value}</div>
+          {subtitle && <div className="text-xs text-white/60">{subtitle}</div>}
           {percentage && (
-            <div className="text-sm text-foreground">{percentage}</div>
+            <div className="text-sm text-white">{percentage}</div>
           )}
         </div>
       </div>
