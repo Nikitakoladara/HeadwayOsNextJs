@@ -154,28 +154,28 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="border-b border-border bg-card backdrop-blur-sm">
+      <header className="border-b border-white/20 bg-black/80 backdrop-blur-sm">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-4">
-            <h1 className="text-lg font-semibold text-foreground">New</h1>
-            <span className="text-sm text-muted-foreground">HeadwayOS</span>
+            <h1 className="text-lg font-semibold text-white">New</h1>
+            <span className="text-sm text-white/60">HeadwayOS</span>
             <div className="flex items-center gap-2 ml-4">
-              <span className="text-sm text-muted-foreground">🔍 Search</span>
+              <span className="text-sm text-white/60">🔍 Search</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground hover:bg-accent">New</Button>
+            <Button variant="ghost" size="sm" className="text-white/60 hover:text-white hover:bg-white/10">New</Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className={`text-muted-foreground hover:text-foreground transition-all ${rightSidebarVisible ? 'bg-accent' : ''} hover:bg-accent`}
+              className={`text-white/60 hover:text-white transition-all ${rightSidebarVisible ? 'bg-white/10' : ''} hover:bg-white/10`}
               onClick={toggleRightSidebar}
             >
               Insights
             </Button>
             <ThemeToggle />
-            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent transition-all cursor-pointer">
-              <span className="text-xs text-foreground">A</span>
+            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-all cursor-pointer">
+              <span className="text-xs text-white">A</span>
             </div>
           </div>
         </div>
