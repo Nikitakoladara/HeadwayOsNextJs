@@ -197,8 +197,8 @@ function ChatMessage({ message, isUser }) {
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-3`}>
       <div className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
         isUser 
-          ? 'bg-white/20 text-gray-100 rounded-br-md' 
-          : 'bg-white/5 text-gray-300 rounded-bl-md'
+          ? 'bg-primary/20 text-foreground rounded-br-md' 
+          : 'bg-secondary/5 text-muted-foreground rounded-bl-md'
       }`}>
         {message.text}
       </div>
