@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "passed": 0,
+    "failed": 6,
+    "success_rate": 0.0,
+    "timestamp": "2025-09-05T22:23:50.295701"
+  },
+  "tests": [
+    {
+      "test": "Root Endpoint",
+      "status": "FAIL",
+      "message": "HTTP 502: ",
+      "timestamp": "2025-09-05T22:23:50.031510"
+    },
+    {
+      "test": "Status POST Validation",
+      "status": "FAIL",
+      "message": "Expected 400 status, got 502: ",
+      "timestamp": "2025-09-05T22:23:50.084782"
+    },
+    {
+      "test": "Status POST",
+      "status": "FAIL",
+      "message": "HTTP 502: ",
+      "timestamp": "2025-09-05T22:23:50.137321"
+    },
+    {
+      "test": "Status GET",
+      "status": "FAIL",
+      "message": "HTTP 502: ",
+      "timestamp": "2025-09-05T22:23:50.188747"
+    },
+    {
+      "test": "Invalid Route Handling",
+      "status": "FAIL",
+      "message": "Expected 404 status, got 502: ",
+      "timestamp": "2025-09-05T22:23:50.242007"
+    },
+    {
+      "test": "CORS Headers",
+      "status": "FAIL",
+      "message": "Missing CORS headers. Found: []",
+      "timestamp": "2025-09-05T22:23:50.294140"
+    }
+  ]
+}
