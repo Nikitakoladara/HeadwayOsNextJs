@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 
 # Configuration
-BASE_URL = "https://pdf-theme-impl.preview.emergentagent.com/api"
+BASE_URL = "http://localhost:3000/api"
 HEADERS = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
