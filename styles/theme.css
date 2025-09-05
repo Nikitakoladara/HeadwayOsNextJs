@@ -1,55 +1,7 @@
-/* Modern Theme Configuration with Light and Dark Mode */
+/* Dark Mode Only Theme Configuration - Based on RGB.pdf */
 
 :root { 
-  --background: rgb(252 252 252); 
-  --foreground: rgb(0 0 0); 
-  --card: rgb(255 255 255); 
-  --card-foreground: rgb(0 0 0); 
-  --popover: rgb(252 252 252); 
-  --popover-foreground: rgb(0 0 0); 
-  --primary: rgb(0 0 0); 
-  --primary-foreground: rgb(255 255 255); 
-  --secondary: rgb(235 235 235); 
-  --secondary-foreground: rgb(0 0 0); 
-  --muted: rgb(245 245 245); 
-  --muted-foreground: rgb(82 82 82); 
-  --accent: rgb(235 235 235); 
-  --accent-foreground: rgb(0 0 0); 
-  --destructive: rgb(229 75 79); 
-  --border: rgb(228 228 228); 
-  --input: rgb(235 235 235); 
-  --ring: rgb(0 0 0); 
-  --chart-1: rgb(255 174 4); 
-  --chart-2: rgb(45 98 239); 
-  --chart-3: rgb(164 164 164); 
-  --chart-4: rgb(228 228 228); 
-  --chart-5: rgb(116 116 116); 
-  --sidebar: rgb(252 252 252); 
-  --sidebar-foreground: rgb(0 0 0); 
-  --sidebar-primary: rgb(0 0 0); 
-  --sidebar-primary-foreground: rgb(255 255 255); 
-  --sidebar-accent: rgb(235 235 235); 
-  --sidebar-accent-foreground: rgb(0 0 0); 
-  --sidebar-border: rgb(235 235 235); 
-  --sidebar-ring: rgb(0 0 0); 
- 
-  --font-sans: Geist, Geist Fallback, sans-serif; 
-  --font-serif: Lato, sans-serif; 
-  --font-mono: Delius Swash Caps, serif; 
- 
-  --radius: 0.5rem; 
-   
-  --shadow-2xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
-  --shadow-xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
-  --shadow-sm: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 1px 2px -1px rgb(0 0 0 / 0.09); 
-  --shadow: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 1px 2px -1px rgb(0 0 0 / 0.09); 
-  --shadow-md: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 2px 4px -1px rgb(0 0 0 / 0.09); 
-  --shadow-lg: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 4px 6px -1px rgb(0 0 0 / 0.09); 
-  --shadow-xl: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 8px 10px -1px rgb(0 0 0 / 0.09); 
-  --shadow-2xl: 0px 1px 2px 0px rgb(0 0 0 / 0.22); 
-} 
- 
-.dark { 
+  /* Dark theme colors from PDF */
   --background: rgb(15 15 15); 
   --foreground: rgb(209 209 209); 
   --card: rgb(15 15 15); 
@@ -81,7 +33,16 @@
   --sidebar-accent-foreground: rgb(199 199 199); 
   --sidebar-border: rgb(33 33 33); 
   --sidebar-ring: rgb(154 154 154); 
+ 
+  /* Typography from PDF */
+  --font-sans: Geist, Geist Fallback, sans-serif; 
+  --font-serif: Lato, sans-serif; 
+  --font-mono: Delius Swash Caps, serif; 
+ 
+  /* Border radius from PDF */
+  --radius: 0.5rem; 
    
+  /* Shadow system from PDF */
   --shadow-2xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
   --shadow-xs: 0px 1px 2px 0px rgb(0 0 0 / 0.04); 
   --shadow-sm: 0px 1px 2px 0px rgb(0 0 0 / 0.09), 0px 1px 2px -1px rgb(0 0 0 / 0.09); 
