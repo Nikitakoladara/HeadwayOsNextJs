@@ -235,11 +235,11 @@ function GenerationStep({ step, completed, active }) {
   return (
     <div className={`flex items-center gap-3 py-2 ${active ? 'opacity-100' : completed ? 'opacity-60' : 'opacity-30'}`}>
       <div className={`h-4 w-4 rounded-full border-2 ${
-        completed ? 'bg-white/20 border-white/40' : active ? 'border-white/40 bg-transparent' : 'border-white/10'
+        completed ? 'bg-primary/20 border-primary/40' : active ? 'border-primary/40 bg-transparent' : 'border-border'
       }`}>
-        {completed && <div className="h-full w-full rounded-full bg-gradient-to-r from-white/60 to-white/40" />}
+        {completed && <div className="h-full w-full rounded-full bg-gradient-to-r from-primary/60 to-primary/40" />}
       </div>
-      <span className="text-sm text-gray-300">{step.text}</span>
+      <span className="text-sm text-muted-foreground">{step.text}</span>
     </div>
   );
 }
