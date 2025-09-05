@@ -149,9 +149,9 @@ function PrimaryButton({ children, onClick, disabled }) {
     <button
       onClick={onClick}
       disabled={disabled}
-      className="group relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-md border border-border bg-primary/10 px-4 font-medium text-foreground shadow-inner transition active:scale-[.99] disabled:opacity-50 hover:bg-primary/20"
+      className="group relative inline-flex h-11 items-center justify-center gap-2 overflow-hidden rounded-md border border-white/20 bg-white/10 px-4 font-medium text-white shadow-lg transition hover:bg-white/20 hover:border-white/30 active:scale-[.99] disabled:opacity-50"
     >
-      <span className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-b from-primary/10 to-transparent opacity-0 transition group-hover:opacity-100" />
+      <span className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-b from-white/20 to-transparent opacity-0 transition group-hover:opacity-100" />
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </button>
   );
