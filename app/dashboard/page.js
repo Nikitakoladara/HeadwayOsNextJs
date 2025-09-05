@@ -116,6 +116,7 @@ function TaskItem({ task, onComplete, index }) {
     </div>
   );
 }
+
 function SkillRadarChart() {
   const points = [
     { label: "API", x: 50, y: 20 },
@@ -200,7 +201,6 @@ export default function Dashboard() {
 
   const handleNavClick = (navItem) => {
     setActiveNavItem(navItem);
-    // Toggle sidebar on nav click
     setSidebarExpanded(!sidebarExpanded);
   };
 
@@ -489,69 +489,6 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-
-              {/* Second Bottom Row */}
-              <div className="grid grid-cols-2 gap-4 mt-4">
-                {/* Modules Card */}
-                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
-                  <div className="mb-3">
-                    <h3 className="font-medium text-card-foreground">Modules</h3>
-                    <div className="text-xs text-muted-foreground">Tracks</div>
-                  </div>
-                  <div className="grid grid-cols-3 gap-4 text-center mb-4">
-                    <div>
-                      <div className="text-2xl font-bold text-card-foreground">80</div>
-                      <div className="text-xs text-muted-foreground">Foundations</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-card-foreground">55</div>
-                      <div className="text-xs text-muted-foreground">Systems</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-card-foreground">30</div>
-                      <div className="text-xs text-muted-foreground">Projects</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">View Modules</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Generate quiz</Button>
-                  </div>
-                </div>
-
-                {/* Interview/Jobs Card */}
-                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
-                  <div className="mb-3">
-                    <h3 className="font-medium text-card-foreground">Interview / Jobs</h3>
-                    <div className="text-xs text-muted-foreground">Pipeline & prep</div>
-                  </div>
-                  <div className="flex items-center justify-center mb-4">
-                    <CircularProgress percentage={76} size="small" />
-                  </div>
-                  <div className="text-xs text-muted-foreground mb-3">
-                    Upcoming 2  Referrals 1
-                  </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Open Pipeline</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Prepare</Button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Section */}
-              <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
-                  <h3 className="font-medium text-card-foreground mb-3">Quick Tips</h3>
-                  <div className="text-sm text-muted-foreground">High-leverage actions</div>
-                </div>
-                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
-                  <h3 className="font-medium text-card-foreground mb-3">Pinned & Recent</h3>
-                  <div className="text-sm text-muted-foreground">Jump back in</div>
-                  <div className="mt-2">
-                    <div className="text-xs text-muted-foreground mb-1">PINNED</div>
-                    <div className="text-xs text-muted-foreground">RECENT</div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right Sidebar */}
@@ -602,24 +539,6 @@ export default function Dashboard() {
                     </div>
                     <SkillRadarChart />
                     <div className="text-xs text-muted-foreground text-center mt-2">Foundations</div>
-                  </div>
-
-                  {/* Learning Velocity */}
-                  <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
-                    <div className="mb-3">
-                      <h3 className="font-medium text-card-foreground">Learning Velocity</h3>
-                      <div className="text-xs text-muted-foreground">Weekly hours (12w)</div>
-                    </div>
-                    <div className="h-24 flex items-end justify-center">
-                      <svg viewBox="0 0 100 50" className="w-full h-full">
-                        <polyline
-                          fill="none"
-                          stroke="#60a5fa"
-                          strokeWidth="2"
-                          points="10,40 20,35 30,30 40,25 50,20 60,15 70,20 80,15 90,10"
-                        />
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </aside>
