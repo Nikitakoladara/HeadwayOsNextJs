@@ -133,12 +133,12 @@ function FogCard({ children, className = "" }) {
       animate="in"
       exit="out"
       className={
-        "relative w-full max-w-[720px] border border-border bg-card/20 backdrop-blur-xl text-foreground rounded-2xl p-8 shadow-2xl " +
+        "relative w-full max-w-[720px] border border-border bg-black/80 backdrop-blur-2xl text-white rounded-2xl p-8 shadow-2xl modern-card " +
         className
       }
-      style={{ boxShadow: "var(--shadow-2xl)" }}
+      style={{ boxShadow: "0 8px 40px rgba(0, 0, 0, 0.6)" }}
     >
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-white/10 via-transparent to-transparent" />
       <div className="relative">{children}</div>
     </motion.div>
   );
