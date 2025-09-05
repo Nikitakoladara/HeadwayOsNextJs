@@ -1,46 +1,76 @@
 {
   "summary": {
-    "passed": 0,
-    "failed": 6,
-    "success_rate": 0.0,
-    "timestamp": "2025-09-05T22:23:50.295701"
+    "passed": 6,
+    "failed": 0,
+    "success_rate": 100.0,
+    "timestamp": "2025-09-05T22:24:54.506372"
   },
   "tests": [
     {
       "test": "Root Endpoint",
-      "status": "FAIL",
-      "message": "HTTP 502: ",
-      "timestamp": "2025-09-05T22:23:50.031510"
+      "status": "PASS",
+      "message": "Successfully returned 'Hello World' message",
+      "timestamp": "2025-09-05T22:24:53.698821",
+      "response": {
+        "message": "Hello World"
+      }
     },
     {
       "test": "Status POST Validation",
-      "status": "FAIL",
-      "message": "Expected 400 status, got 502: ",
-      "timestamp": "2025-09-05T22:23:50.084782"
+      "status": "PASS",
+      "message": "Correctly validates missing client_name",
+      "timestamp": "2025-09-05T22:24:53.716514",
+      "response": {
+        "error": "client_name is required"
+      }
     },
     {
       "test": "Status POST",
-      "status": "FAIL",
-      "message": "HTTP 502: ",
-      "timestamp": "2025-09-05T22:23:50.137321"
+      "status": "PASS",
+      "message": "Successfully created status check with ID: 19c4f74e-124e-4675-895e-522244e108c7",
+      "timestamp": "2025-09-05T22:24:53.807545",
+      "response": {
+        "id": "19c4f74e-124e-4675-895e-522244e108c7",
+        "client_name": "HeadwayOS_Test_Client",
+        "timestamp": "2025-09-05T22:24:53.728Z",
+        "_id": "68bb6335fc38ac47414b2acd"
+      }
     },
     {
       "test": "Status GET",
-      "status": "FAIL",
-      "message": "HTTP 502: ",
-      "timestamp": "2025-09-05T22:23:50.188747"
+      "status": "PASS",
+      "message": "Successfully retrieved 1 status checks",
+      "timestamp": "2025-09-05T22:24:54.388711",
+      "response": {
+        "count": 1,
+        "sample": [
+          {
+            "id": "19c4f74e-124e-4675-895e-522244e108c7",
+            "client_name": "HeadwayOS_Test_Client",
+            "timestamp": "2025-09-05T22:24:53.728Z"
+          }
+        ]
+      }
     },
     {
       "test": "Invalid Route Handling",
-      "status": "FAIL",
-      "message": "Expected 404 status, got 502: ",
-      "timestamp": "2025-09-05T22:23:50.242007"
+      "status": "PASS",
+      "message": "Correctly returns 404 for invalid routes",
+      "timestamp": "2025-09-05T22:24:54.492071",
+      "response": {
+        "error": "Route /nonexistent not found"
+      }
     },
     {
       "test": "CORS Headers",
-      "status": "FAIL",
-      "message": "Missing CORS headers. Found: []",
-      "timestamp": "2025-09-05T22:23:50.294140"
+      "status": "PASS",
+      "message": "CORS headers present: ['Access-Control-Allow-Origin', 'Access-Control-Allow-Methods', 'Access-Control-Allow-Headers']",
+      "timestamp": "2025-09-05T22:24:54.506104",
+      "response": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "*, Content-Type, Authorization"
+      }
     }
   ]
 }
