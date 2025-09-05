@@ -174,7 +174,7 @@ function Chip({ active, label, onToggle }) {
     <button
       onClick={onToggle}
       className={`min-w-[88px] rounded-md border px-3 py-2 text-sm transition ${
-        active ? "border-white/20 bg-white/10 text-gray-100" : "border-white/10 bg-white/5 text-gray-300 hover:bg-white/10"
+        active ? "border-border bg-accent text-accent-foreground" : "border-border bg-secondary/5 text-muted-foreground hover:bg-secondary/10"
       }`}
     >
       {label}
@@ -184,8 +184,8 @@ function Chip({ active, label, onToggle }) {
 
 function ProgressShimmer() {
   return (
-    <div className="relative h-2 w-full overflow-hidden rounded-md border border-white/10 bg-white/5">
-      <div className="absolute inset-y-0 left-0 w-1/3 animate-[progress_1.8s_ease_infinite] bg-gradient-to-r from-white/20 via-white/50 to-white/20" />
+    <div className="relative h-2 w-full overflow-hidden rounded-md border border-border bg-secondary/5">
+      <div className="absolute inset-y-0 left-0 w-1/3 animate-[progress_1.8s_ease_infinite] bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20" />
       <style>{`@keyframes progress { 0%{transform:translateX(-120%)} 100%{transform:translateX(420%)} }`}</style>
     </div>
   );
