@@ -299,7 +299,36 @@ export default function HeadwayOAuthAndOnboarding() {
 
   useEffect(() => {
     document.title = "HeadwayOS – Get started";
-  }, []);
+    
+    // Load saved data from localStorage
+    const savedUser = localStorage.getItem('user');
+    const savedOnboardingData = localStorage.getItem('onboardingData');
+    const savedWorkspace = localStorage.getItem('workspace');
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    
+    if (savedOnboardingData) {
+      setOnboardingData(JSON.parse(savedOnboardingData));
+    }
+    
+    if (savedWorkspace) {
+      const workspace = JSON.parse(savedWorkspace);
+      setWsName(workspace.name);
+      if (workspace.logo) {
+        setLogo(workspace.logo);
+      }
+      if (workspace.roles) {
+        setRoles(workspace.roles);
+      }
+    }
+    
+    // If user is already authenticated and has completed onboarding, redirect to dashboard
+    if (isAuthenticated && savedUser) {
+      const learningPlan = localStorage.getItem('learningPlan');
+      if (learningPlan) {
+        router.push("/dashboard");
+      }
+    }
+  }, [router]);
 
   useEffect(() => {
     const old = prevUrl.current;
