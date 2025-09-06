@@ -3,14 +3,14 @@
     "passed": 6,
     "failed": 0,
     "success_rate": 100.0,
-    "timestamp": "2025-09-05T22:24:54.506372"
+    "timestamp": "2025-09-06T11:20:12.115772"
   },
   "tests": [
     {
       "test": "Root Endpoint",
       "status": "PASS",
       "message": "Successfully returned 'Hello World' message",
-      "timestamp": "2025-09-05T22:24:53.698821",
+      "timestamp": "2025-09-06T11:20:11.919083",
       "response": {
         "message": "Hello World"
       }
@@ -19,7 +19,7 @@
       "test": "Status POST Validation",
       "status": "PASS",
       "message": "Correctly validates missing client_name",
-      "timestamp": "2025-09-05T22:24:53.716514",
+      "timestamp": "2025-09-06T11:20:11.948392",
       "response": {
         "error": "client_name is required"
       }
@@ -27,27 +27,27 @@
     {
       "test": "Status POST",
       "status": "PASS",
-      "message": "Successfully created status check with ID: 19c4f74e-124e-4675-895e-522244e108c7",
-      "timestamp": "2025-09-05T22:24:53.807545",
+      "message": "Successfully created status check with ID: e1ef7930-c36a-4f62-974c-499df8a6565f",
+      "timestamp": "2025-09-06T11:20:12.013442",
       "response": {
-        "id": "19c4f74e-124e-4675-895e-522244e108c7",
+        "id": "e1ef7930-c36a-4f62-974c-499df8a6565f",
         "client_name": "HeadwayOS_Test_Client",
-        "timestamp": "2025-09-05T22:24:53.728Z",
-        "_id": "68bb6335fc38ac47414b2acd"
+        "timestamp": "2025-09-06T11:20:11.990Z",
+        "_id": "68bc18eb5c54c9ccb23148ae"
       }
     },
     {
       "test": "Status GET",
       "status": "PASS",
       "message": "Successfully retrieved 1 status checks",
-      "timestamp": "2025-09-05T22:24:54.388711",
+      "timestamp": "2025-09-06T11:20:12.091282",
       "response": {
         "count": 1,
         "sample": [
           {
-            "id": "19c4f74e-124e-4675-895e-522244e108c7",
+            "id": "e1ef7930-c36a-4f62-974c-499df8a6565f",
             "client_name": "HeadwayOS_Test_Client",
-            "timestamp": "2025-09-05T22:24:53.728Z"
+            "timestamp": "2025-09-06T11:20:11.990Z"
           }
         ]
       }
@@ -56,7 +56,7 @@
       "test": "Invalid Route Handling",
       "status": "PASS",
       "message": "Correctly returns 404 for invalid routes",
-      "timestamp": "2025-09-05T22:24:54.492071",
+      "timestamp": "2025-09-06T11:20:12.104378",
       "response": {
         "error": "Route /nonexistent not found"
       }
@@ -65,7 +65,7 @@
       "test": "CORS Headers",
       "status": "PASS",
       "message": "CORS headers present: ['Access-Control-Allow-Origin', 'Access-Control-Allow-Methods', 'Access-Control-Allow-Headers']",
-      "timestamp": "2025-09-05T22:24:54.506104",
+      "timestamp": "2025-09-06T11:20:12.115460",
       "response": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
