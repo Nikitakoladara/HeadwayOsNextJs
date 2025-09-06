@@ -202,6 +202,9 @@ export default function Dashboard() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Set client-side flag
+    setIsClient(true);
+    
     // Create comprehensive mock data for the dashboard
     const createMockData = () => {
       const mockDashboardData = {
@@ -248,6 +251,9 @@ export default function Dashboard() {
 
     // Load data from localStorage or create mock data
     const loadDashboardData = () => {
+      // Check if we're on the client side
+      if (typeof window === 'undefined') return;
+      
       let dashboard = localStorage.getItem('dashboardData');
       let profile = localStorage.getItem('userProfile');
       let plan = localStorage.getItem('learningPlan');
