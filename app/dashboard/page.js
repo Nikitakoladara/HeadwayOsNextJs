@@ -199,6 +199,7 @@ export default function Dashboard() {
   const [userProfile, setUserProfile] = useState(null);
   const [learningPlan, setLearningPlan] = useState(null);
   const [workspace, setWorkspace] = useState(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     // Create comprehensive mock data for the dashboard
