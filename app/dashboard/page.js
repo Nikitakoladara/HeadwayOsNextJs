@@ -195,11 +195,46 @@ export default function Dashboard() {
   const [activeNavItem, setActiveNavItem] = useState("Home");
   const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const [rightSidebarVisible, setRightSidebarVisible] = useState(true);
-  const [dashboardData, setDashboardData] = useState(null);
-  const [userProfile, setUserProfile] = useState(null);
-  const [learningPlan, setLearningPlan] = useState(null);
-  const [workspace, setWorkspace] = useState(null);
-  const [isClient, setIsClient] = useState(false);
+  
+  // Initialize with mock data immediately to prevent loading screen
+  const [dashboardData, setDashboardData] = useState({
+    city: "San Francisco",
+    lastSession: "2 hours ago",
+    metrics: {
+      atsScore: 78,
+      marketFit: 84,
+      interviews: 3,
+      modulesInProgress: 2,
+      readiness: 72,
+      coverage: 65,
+      projects: 4,
+      assessments: 8,
+      activeDays: 12
+    }
+  });
+  
+  const [userProfile, setUserProfile] = useState({
+    name: "Aarav",
+    role: {
+      roles: ["Backend", "Full-Stack"]
+    }
+  });
+  
+  const [learningPlan, setLearningPlan] = useState({
+    currentWeek: {
+      tasks: [
+        { name: "Complete API design patterns", hours: "2.5", completed: false },
+        { name: "System design mock interview", hours: "1.0", completed: true },
+        { name: "Database optimization project", hours: "3.0", completed: false },
+        { name: "Kubernetes deployment lab", hours: "2.0", completed: false },
+        { name: "Code review best practices", hours: "1.5", completed: true }
+      ]
+    }
+  });
+  
+  const [workspace, setWorkspace] = useState({
+    name: "Backend SWE Track"
+  });
 
   useEffect(() => {
     // Set client-side flag
