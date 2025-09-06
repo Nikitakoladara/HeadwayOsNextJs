@@ -389,17 +389,7 @@ export default function Dashboard() {
     return "Backend SWE";
   };
 
-  // Early return if data is not loaded or we're still on server side
-  if (!isClient || !dashboardData || !userProfile) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-          <p>Loading your dashboard...</p>
-        </div>
-      </div>
-    );
-  }
+  // Dashboard is now always ready since we initialize with mock data
 
   return (
     <div className="min-h-screen bg-black text-white">
