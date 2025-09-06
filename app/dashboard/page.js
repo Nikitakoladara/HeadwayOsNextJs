@@ -6,17 +6,38 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-// Dashboard metric components with enhanced dark mode design
-function MetricCard({ title, value, subtitle, percentage, variant = "default" }) {
+// Enhanced Dashboard metric components with better interactivity
+function MetricCard({ title, value, subtitle, percentage, variant = "default", onClick, trending }) {
   return (
-    <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
+    <div 
+      className={`rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 transition-all shadow-lg modern-card group ${
+        onClick ? 'cursor-pointer hover:scale-105' : ''
+      }`}
+      onClick={onClick}
+    >
       <div className="space-y-2">
-        <h3 className="text-sm font-medium text-white/80 uppercase tracking-wide">{title}</h3>
+        <div className="flex items-center justify-between">
+          <h3 className="text-sm font-medium text-white/80 uppercase tracking-wide">{title}</h3>
+          {trending && (
+            <div className={`text-xs px-2 py-1 rounded-full ${
+              trending > 0 ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
+            }`}>
+              {trending > 0 ? '+' : ''}{trending}%
+            </div>
+          )}
+        </div>
         <div className="space-y-1">
-          <div className="text-2xl font-bold text-white">{value}</div>
+          <div className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors">
+            {value}
+          </div>
           {subtitle && <div className="text-xs text-white/60">{subtitle}</div>}
           {percentage && (
-            <div className="text-sm text-white">{percentage}</div>
+            <div className="w-full bg-white/10 rounded-full h-1.5 mt-2">
+              <div 
+                className="bg-blue-500 h-1.5 rounded-full transition-all duration-500"
+                style={{ width: `${percentage}%` }}
+              />
+            </div>
           )}
         </div>
       </div>
