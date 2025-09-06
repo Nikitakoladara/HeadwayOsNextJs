@@ -383,8 +383,8 @@ export default function Dashboard() {
     return "Backend SWE";
   };
 
-  // Early return if data is not loaded
-  if (!dashboardData || !userProfile) {
+  // Early return if data is not loaded or we're still on server side
+  if (!isClient || !dashboardData || !userProfile) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
