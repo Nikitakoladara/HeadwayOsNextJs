@@ -631,20 +631,27 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                {/* Roadmap Card */}
+                {/* Enhanced Roadmap Card with Better Task Management */}
                 <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-medium text-white">Roadmap</h3>
+                    <div className="flex items-center gap-2">
+                      <div className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">
+                        {learningPlan?.currentWeek?.tasks?.filter(task => task.completed).length || 0}/
+                        {learningPlan?.currentWeek?.tasks?.length || 0}
+                      </div>
+                    </div>
                   </div>
                   <div className="text-xs text-white/60 mb-3">This week</div>
                   
                   {learningPlan && learningPlan.currentWeek ? (
-                    <div className="space-y-2 mb-3">
+                    <div className="space-y-2 mb-3 max-h-64 overflow-y-auto">
                       {learningPlan.currentWeek.tasks.map((task, index) => (
                         <TaskItem 
                           key={index}
                           task={task}
                           onComplete={completeTask}
+                          onEdit={editTask}
                           index={index}
                         />
                       ))}
@@ -661,9 +668,9 @@ export default function Dashboard() {
                       size="sm" 
                       variant="secondary" 
                       className="text-xs bg-white/10 text-white hover:bg-white/20"
-                      onClick={() => alert('Adjust destination functionality')}
+                      onClick={addTask}
                     >
-                      Adjust destination
+                      Add Task
                     </Button>
                     <Button 
                       size="sm" 
@@ -671,8 +678,24 @@ export default function Dashboard() {
                       className="text-xs border-white/20 text-white hover:bg-white/10"
                       onClick={() => setActiveNavItem("Roadmap")}
                     >
-                      Open
+                      Open Roadmap
                     </Button>
+                  </div>
+                  
+                  {/* Progress Indicator */}
+                  <div className="mt-3 pt-3 border-t border-white/10">
+                    <div className="flex items-center justify-between text-xs text-white/60 mb-1">
+                      <span>Weekly Progress</span>
+                      <span>{Math.round(((learningPlan?.currentWeek?.tasks?.filter(task => task.completed).length || 0) / (learningPlan?.currentWeek?.tasks?.length || 1)) * 100)}%</span>
+                    </div>
+                    <div className="w-full bg-white/10 rounded-full h-2">
+                      <div 
+                        className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-500"
+                        style={{ 
+                          width: `${Math.round(((learningPlan?.currentWeek?.tasks?.filter(task => task.completed).length || 0) / (learningPlan?.currentWeek?.tasks?.length || 1)) * 100)}%` 
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
