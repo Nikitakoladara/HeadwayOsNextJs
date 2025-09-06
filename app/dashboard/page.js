@@ -546,22 +546,29 @@ export default function Dashboard() {
                 <h2 className="text-2xl font-bold mb-2 text-white">{getUserName()}, ready to move your {getTargetRole()} plan forward?</h2>
                 <p className="text-white/60 text-sm mb-6">City: {dashboardData.city} • Last session: {dashboardData.lastSession} • {workspace?.name || 'Workspace'}</p>
                 
-                {/* Main Metrics */}
+                {/* Main Metrics with Enhanced Interactivity */}
                 <div className="grid grid-cols-4 gap-4">
                   <MetricCard 
                     title="MATCH"
                     value={dashboardData.metrics.atsScore + "%"}
-                    subtitle="ATS"
+                    subtitle="ATS Score"
+                    percentage={dashboardData.metrics.atsScore}
+                    trending={2}
+                    onClick={() => handleMetricClick('ats')}
                   />
                   <MetricCard 
                     title="MARKET FIT"
                     value={dashboardData.metrics.marketFit + "%"}
-                    subtitle="360 + 3%"
+                    subtitle="360° + 3%"
+                    percentage={dashboardData.metrics.marketFit}
+                    trending={3}
+                    onClick={() => handleMetricClick('marketFit')}
                   />
                   <MetricCard 
                     title="INTERVIEWS"
                     value={dashboardData.metrics.interviews}
                     subtitle="scheduled"
+                    onClick={() => handleMetricClick('interviews')}
                   />
                   <MetricCard 
                     title="MODULES"
