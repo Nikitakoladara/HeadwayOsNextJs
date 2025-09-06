@@ -105,34 +105,89 @@ function SidebarNavItem({ icon, label, active = false, onClick, isExpanded }) {
   );
 }
 
-function TaskItem({ task, onComplete, index }) {
+function TaskItem({ task, onComplete, index, onEdit }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTask, setEditedTask] = useState(task.name);
+
+  const handleSave = () => {
+    if (onEdit) {
+      onEdit(index, { ...task, name: editedTask });
+    }
+    setIsEditing(false);
+  };
+
+  const handleCancel = () => {
+    setEditedTask(task.name);
+    setIsEditing(false);
+  };
+
   return (
-    <div className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
+    <div className={`flex items-center justify-between p-3 rounded-lg border transition-all group ${
       task.completed 
         ? 'border-green-500/30 bg-green-500/10' 
-        : 'border-white/20 bg-black/30 hover:bg-white/10'
+        : 'border-white/20 bg-black/30 hover:bg-white/10 hover:border-white/30'
     }`}>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 flex-1">
         <button
           onClick={() => onComplete(index)}
-          className={`w-5 h-5 rounded-full border-2 transition-all ${
+          className={`w-5 h-5 rounded-full border-2 transition-all flex items-center justify-center ${
             task.completed
-              ? 'bg-green-500 border-green-500'
-              : 'border-white/40 hover:border-white/60'
+              ? 'bg-green-500 border-green-500 scale-110'
+              : 'border-white/40 hover:border-white/60 hover:scale-110'
           }`}
         >
           {task.completed && (
-            <svg className="w-3 h-3 text-white mx-auto" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
           )}
         </button>
-        <div>
-          <div className={`text-sm ${task.completed ? 'text-green-400 line-through' : 'text-white'}`}>
-            {task.name}
-          </div>
-          <div className="text-xs text-white/60">{task.hours} hours</div>
+        <div className="flex-1">
+          {isEditing ? (
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={editedTask}
+                onChange={(e) => setEditedTask(e.target.value)}
+                className="flex-1 bg-white/10 border border-white/20 rounded px-2 py-1 text-sm text-white focus:border-white/40 focus:outline-none"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') handleSave();
+                  if (e.key === 'Escape') handleCancel();
+                }}
+              />
+              <button
+                onClick={handleSave}
+                className="text-green-400 hover:text-green-300 p-1"
+              >
+                ✓
+              </button>
+              <button
+                onClick={handleCancel}
+                className="text-red-400 hover:text-red-300 p-1"
+              >
+                ✕
+              </button>
+            </div>
+          ) : (
+            <div 
+              className="cursor-pointer"
+              onDoubleClick={() => setIsEditing(true)}
+            >
+              <div className={`text-sm ${task.completed ? 'text-green-400 line-through' : 'text-white'}`}>
+                {task.name}
+              </div>
+              <div className="text-xs text-white/60">{task.hours} hours</div>
+            </div>
+          )}
         </div>
+        {!isEditing && (
+          <button
+            onClick={() => setIsEditing(true)}
+            className="opacity-0 group-hover:opacity-100 text-white/60 hover:text-white/80 text-xs p-1 transition-all"
+          >
+            Edit
+          </button>
+        )}
       </div>
     </div>
   );
