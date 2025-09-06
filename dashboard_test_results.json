@@ -1,0 +1,64 @@
+{
+  "summary": {
+    "passed": 2,
+    "failed": 7,
+    "success_rate": 22.22222222222222,
+    "timestamp": "2025-09-06T11:23:39.478137"
+  },
+  "tests": [
+    {
+      "test": "Dashboard Accessibility",
+      "status": "FAIL",
+      "message": "Dashboard still shows loading screen - mock data may not be loading properly",
+      "timestamp": "2025-09-06T11:23:38.542044"
+    },
+    {
+      "test": "Mock Data Integration",
+      "status": "FAIL",
+      "message": "Insufficient mock data found - only 0/7 elements",
+      "timestamp": "2025-09-06T11:23:38.583596"
+    },
+    {
+      "test": "Metric Cards Structure",
+      "status": "FAIL",
+      "message": "Insufficient metric card structure - only 1/4 patterns found",
+      "timestamp": "2025-09-06T11:23:38.613877"
+    },
+    {
+      "test": "Interactive Elements",
+      "status": "FAIL",
+      "message": "Limited interactive elements - only 0/5 indicators found",
+      "timestamp": "2025-09-06T11:23:38.638658"
+    },
+    {
+      "test": "Task Management Structure",
+      "status": "FAIL",
+      "message": "Limited task management elements - only 0/6 indicators found",
+      "timestamp": "2025-09-06T11:23:38.663118"
+    },
+    {
+      "test": "Sidebar Navigation",
+      "status": "FAIL",
+      "message": "Limited navigation items - only 0/8 items found",
+      "timestamp": "2025-09-06T11:23:38.691638"
+    },
+    {
+      "test": "Theme System",
+      "status": "PASS",
+      "message": "Theme system implemented - found 4/5 theme indicators",
+      "timestamp": "2025-09-06T11:23:38.714616"
+    },
+    {
+      "test": "Progress Indicators",
+      "status": "FAIL",
+      "message": "Limited progress tracking - only 0/6 indicators found",
+      "timestamp": "2025-09-06T11:23:38.734247"
+    },
+    {
+      "test": "API Backend Integration",
+      "status": "PASS",
+      "message": "Backend API accessible and responding correctly",
+      "timestamp": "2025-09-06T11:23:39.477806"
+    }
+  ]
+}
