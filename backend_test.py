@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 
 # Configuration
-BASE_URL = "http://localhost:3000/api"
+BASE_URL = "http://localhost:3001/api"
 HEADERS = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
