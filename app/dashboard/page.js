@@ -1,9 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 // Enhanced Dashboard metric components with better interactivity
@@ -61,7 +59,7 @@ function CircularProgress({ percentage, size = "large" }) {
             cx="50"
             cy="50"
             r={radius}
-            stroke="rgb(var(--border))"
+            stroke="rgb(255 255 255 / 0.2)"
             strokeWidth="6"
             fill="none"
           />
@@ -69,7 +67,7 @@ function CircularProgress({ percentage, size = "large" }) {
             cx="50"
             cy="50"
             r={radius}
-            stroke="rgb(var(--chart-2))"
+            stroke="rgb(59 130 246)"
             strokeWidth="6"
             fill="none"
             strokeLinecap="round"
@@ -80,7 +78,7 @@ function CircularProgress({ percentage, size = "large" }) {
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-xl font-bold text-foreground">{percentage}%</span>
+          <span className="text-xl font-bold text-white">{percentage}%</span>
         </div>
       </div>
     </div>
@@ -93,8 +91,8 @@ function SidebarNavItem({ icon, label, active = false, onClick, isExpanded }) {
       onClick={onClick}
       className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all ${
         active 
-          ? 'bg-sidebar-accent text-sidebar-accent-foreground border border-sidebar-border' 
-          : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
+          ? 'bg-white/20 text-white border border-white/30' 
+          : 'text-white/70 hover:bg-white/10 hover:text-white'
       } ${!isExpanded ? 'justify-center' : ''}`}
     >
       <div className="w-5 h-5 flex items-center justify-center">
@@ -105,7 +103,7 @@ function SidebarNavItem({ icon, label, active = false, onClick, isExpanded }) {
   );
 }
 
-function TaskItem({ task, onComplete, index, onEdit }) {
+function TaskItem({ task, onComplete, onEdit, index }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTask, setEditedTask] = useState(task.name);
 
@@ -189,58 +187,6 @@ function TaskItem({ task, onComplete, index, onEdit }) {
           </button>
         )}
       </div>
-    </div>
-  );
-}
-
-function SkillRadarChart() {
-  const points = [
-    { label: "API", x: 50, y: 20 },
-    { label: "SYS", x: 80, y: 40 },
-    { label: "Tools", x: 70, y: 80 },
-    { label: "Data", x: 30, y: 80 },
-    { label: "Foundations", x: 20, y: 40 }
-  ];
-  
-  return (
-    <div className="relative w-full h-48 flex items-center justify-center">
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        {/* Radar grid */}
-        <polygon
-          points="50,20 80,40 70,80 30,80 20,40"
-          fill="none"
-          stroke="rgb(var(--border))"
-          strokeWidth="0.5"
-        />
-        <polygon
-          points="50,35 65,45 60,65 40,65 35,45"
-          fill="none"
-          stroke="rgb(var(--muted))"
-          strokeWidth="0.5"
-        />
-        
-        {/* Data area */}
-        <polygon
-          points="50,25 75,42 65,75 35,75 25,42"
-          fill="rgb(var(--chart-2) / 0.1)"
-          stroke="rgb(var(--chart-2) / 0.4)"
-          strokeWidth="1"
-        />
-        
-        {/* Labels */}
-        {points.map((point, i) => (
-          <text
-            key={i}
-            x={point.x}
-            y={point.y}
-            className="text-xs fill-muted-foreground"
-            textAnchor="middle"
-            dominantBaseline="middle"
-          >
-            {point.label}
-          </text>
-        ))}
-      </svg>
     </div>
   );
 }
@@ -430,6 +376,7 @@ export default function Dashboard() {
     return "Backend SWE";
   };
 
+  // Early return if data is not loaded
   if (!dashboardData || !userProfile) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
@@ -473,7 +420,7 @@ export default function Dashboard() {
 
       <div className="flex">
         {/* Left Sidebar */}
-        <aside className={`${sidebarExpanded ? 'w-64' : 'w-16'} min-h-screen border-r border-sidebar-border bg-sidebar backdrop-blur-sm p-4 transition-all duration-300`}>
+        <aside className={`${sidebarExpanded ? 'w-64' : 'w-16'} min-h-screen border-r border-white/20 bg-black/60 backdrop-blur-sm p-4 transition-all duration-300`}>
           <nav className="space-y-2">
             <SidebarNavItem 
               icon="🏠" 
@@ -539,9 +486,9 @@ export default function Dashboard() {
           <div className={`grid gap-6 ${rightSidebarVisible ? 'grid-cols-12' : 'grid-cols-1'}`}>
             {/* Welcome Section */}
             <div className={rightSidebarVisible ? 'col-span-8' : 'col-span-1'}>
-              <div className="rounded-lg border border-border bg-card p-6 backdrop-blur-sm mb-6 hover:bg-accent transition-all shadow-sm">
+              <div className="rounded-lg border border-white/20 bg-black/60 backdrop-blur-sm p-6 mb-6 hover:bg-white/5 transition-all shadow-sm">
                 <div className="mb-4">
-                  <span className="text-sm text-muted-foreground uppercase tracking-wide">WELCOME BACK</span>
+                  <span className="text-sm text-white/60 uppercase tracking-wide">WELCOME BACK</span>
                 </div>
                 <h2 className="text-2xl font-bold mb-2 text-white">{getUserName()}, ready to move your {getTargetRole()} plan forward?</h2>
                 <p className="text-white/60 text-sm mb-6">City: {dashboardData.city} • Last session: {dashboardData.lastSession} • {workspace?.name || 'Workspace'}</p>
@@ -614,20 +561,20 @@ export default function Dashboard() {
                 </div>
 
                 {/* Career Intelligence Card */}
-                <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+                <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-medium text-card-foreground">Career Intelligence</h3>
+                    <h3 className="font-medium text-white">Career Intelligence</h3>
                   </div>
                   <div className="mb-4">
-                    <div className="text-lg font-bold text-card-foreground">74%</div>
-                    <div className="text-xs text-muted-foreground">top percentile 84 • 3% / 30d</div>
+                    <div className="text-lg font-bold text-white">74%</div>
+                    <div className="text-xs text-white/60">top percentile 84 • 3% / 30d</div>
                   </div>
-                  <div className="text-xs text-muted-foreground mb-3">
+                  <div className="text-xs text-white/60 mb-3">
                     Focus skills: Kafka • GraphQL • Go
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="text-xs">Open Intelligence</Button>
-                    <Button size="sm" variant="outline" className="text-xs">Add Skill</Button>
+                    <Button size="sm" variant="secondary" className="text-xs bg-white/10 text-white hover:bg-white/20">Open Intelligence</Button>
+                    <Button size="sm" variant="outline" className="text-xs border-white/20 text-white hover:bg-white/10">Add Skill</Button>
                   </div>
                 </div>
 
@@ -760,13 +707,44 @@ export default function Dashboard() {
                   </div>
 
                   {/* Skill Radar */}
-                  <div className="rounded-lg border border-border bg-card p-4 backdrop-blur-sm hover:bg-accent transition-all shadow-sm">
+                  <div className="rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm p-4 hover:bg-white/10 transition-all shadow-lg modern-card">
                     <div className="mb-3">
-                      <h3 className="font-medium text-card-foreground">Skill Radar</h3>
-                      <div className="text-xs text-muted-foreground">Top categories</div>
+                      <h3 className="font-medium text-white">Skill Radar</h3>
+                      <div className="text-xs text-white/60">Top categories</div>
                     </div>
-                    <SkillRadarChart />
-                    <div className="text-xs text-muted-foreground text-center mt-2">Foundations</div>
+                    <div className="relative w-full h-48 flex items-center justify-center">
+                      <svg viewBox="0 0 100 100" className="w-full h-full">
+                        {/* Radar grid */}
+                        <polygon
+                          points="50,20 80,40 70,80 30,80 20,40"
+                          fill="none"
+                          stroke="rgb(255 255 255 / 0.2)"
+                          strokeWidth="0.5"
+                        />
+                        <polygon
+                          points="50,35 65,45 60,65 40,65 35,45"
+                          fill="none"
+                          stroke="rgb(255 255 255 / 0.3)"
+                          strokeWidth="0.5"
+                        />
+                        
+                        {/* Data area */}
+                        <polygon
+                          points="50,25 75,42 65,75 35,75 25,42"
+                          fill="rgb(59 130 246 / 0.1)"
+                          stroke="rgb(59 130 246 / 0.4)"
+                          strokeWidth="1"
+                        />
+                        
+                        {/* Labels */}
+                        <text x="50" y="20" className="text-xs fill-white/60" textAnchor="middle" dominantBaseline="middle">API</text>
+                        <text x="80" y="40" className="text-xs fill-white/60" textAnchor="middle" dominantBaseline="middle">SYS</text>
+                        <text x="70" y="80" className="text-xs fill-white/60" textAnchor="middle" dominantBaseline="middle">Tools</text>
+                        <text x="30" y="80" className="text-xs fill-white/60" textAnchor="middle" dominantBaseline="middle">Data</text>
+                        <text x="20" y="40" className="text-xs fill-white/60" textAnchor="middle" dominantBaseline="middle">Foundations</text>
+                      </svg>
+                    </div>
+                    <div className="text-xs text-white/60 text-center mt-2">Foundations</div>
                   </div>
                 </div>
               </aside>
