@@ -358,14 +358,59 @@ export default function Dashboard() {
   const completeTask = (taskIndex) => {
     if (learningPlan) {
       const newPlan = { ...learningPlan };
-      newPlan.currentWeek.tasks[taskIndex].completed = true;
+      newPlan.currentWeek.tasks[taskIndex].completed = !newPlan.currentWeek.tasks[taskIndex].completed;
       setLearningPlan(newPlan);
       localStorage.setItem('learningPlan', JSON.stringify(newPlan));
       
       // Update progress metrics
       const completedTasks = newPlan.currentWeek.tasks.filter(task => task.completed).length;
       const progressPercentage = Math.round((completedTasks / newPlan.currentWeek.tasks.length) * 100);
-      updateMetrics('coverage', Math.min(dashboardData?.metrics?.coverage + 5, 100));
+      updateMetrics('coverage', Math.min(progressPercentage, 100));
+    }
+  };
+
+  // Function to edit tasks
+  const editTask = (taskIndex, updatedTask) => {
+    if (learningPlan) {
+      const newPlan = { ...learningPlan };
+      newPlan.currentWeek.tasks[taskIndex] = updatedTask;
+      setLearningPlan(newPlan);
+      localStorage.setItem('learningPlan', JSON.stringify(newPlan));
+    }
+  };
+
+  // Function to add new task
+  const addTask = () => {
+    if (learningPlan) {
+      const newTask = {
+        name: "New task - double click to edit",
+        hours: "1.0",
+        completed: false
+      };
+      const newPlan = { ...learningPlan };
+      newPlan.currentWeek.tasks.push(newTask);
+      setLearningPlan(newPlan);
+      localStorage.setItem('learningPlan', JSON.stringify(newPlan));
+    }
+  };
+
+  // Enhanced metric click handlers
+  const handleMetricClick = (metricType) => {
+    switch (metricType) {
+      case 'ats':
+        updateMetrics('atsScore', Math.min(dashboardData.metrics.atsScore + 5, 100));
+        break;
+      case 'marketFit':
+        updateMetrics('marketFit', Math.min(dashboardData.metrics.marketFit + 3, 100));
+        break;
+      case 'interviews':
+        updateMetrics('interviews', dashboardData.metrics.interviews + 1);
+        break;
+      case 'readiness':
+        updateMetrics('readiness', Math.min(dashboardData.metrics.readiness + 2, 100));
+        break;
+      default:
+        break;
     }
   };
 
