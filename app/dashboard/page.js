@@ -179,17 +179,76 @@ export default function Dashboard() {
   const [workspace, setWorkspace] = useState(null);
 
   useEffect(() => {
-    // Load data from localStorage
+    // Create comprehensive mock data for the dashboard
+    const createMockData = () => {
+      const mockDashboardData = {
+        city: "San Francisco",
+        lastSession: "2 hours ago",
+        metrics: {
+          atsScore: 78,
+          marketFit: 84,
+          interviews: 3,
+          modulesInProgress: 2,
+          readiness: 72,
+          coverage: 65,
+          projects: 4,
+          assessments: 8,
+          activeDays: 12
+        }
+      };
+
+      const mockUserProfile = {
+        name: "Aarav",
+        role: {
+          roles: ["Backend", "Full-Stack"]
+        }
+      };
+
+      const mockLearningPlan = {
+        currentWeek: {
+          tasks: [
+            { name: "Complete API design patterns", hours: "2.5", completed: false },
+            { name: "System design mock interview", hours: "1.0", completed: true },
+            { name: "Database optimization project", hours: "3.0", completed: false },
+            { name: "Kubernetes deployment lab", hours: "2.0", completed: false },
+            { name: "Code review best practices", hours: "1.5", completed: true }
+          ]
+        }
+      };
+
+      const mockWorkspace = {
+        name: "Backend SWE Track"
+      };
+
+      return { mockDashboardData, mockUserProfile, mockLearningPlan, mockWorkspace };
+    };
+
+    // Load data from localStorage or create mock data
     const loadDashboardData = () => {
-      const dashboard = localStorage.getItem('dashboardData');
-      const profile = localStorage.getItem('userProfile');
-      const plan = localStorage.getItem('learningPlan');
-      const ws = localStorage.getItem('workspace');
+      let dashboard = localStorage.getItem('dashboardData');
+      let profile = localStorage.getItem('userProfile');
+      let plan = localStorage.getItem('learningPlan');
+      let ws = localStorage.getItem('workspace');
       
-      if (dashboard) setDashboardData(JSON.parse(dashboard));
-      if (profile) setUserProfile(JSON.parse(profile));
-      if (plan) setLearningPlan(JSON.parse(plan));
-      if (ws) setWorkspace(JSON.parse(ws));
+      // If no data exists, create and store mock data
+      if (!dashboard || !profile || !plan || !ws) {
+        const { mockDashboardData, mockUserProfile, mockLearningPlan, mockWorkspace } = createMockData();
+        
+        localStorage.setItem('dashboardData', JSON.stringify(mockDashboardData));
+        localStorage.setItem('userProfile', JSON.stringify(mockUserProfile));
+        localStorage.setItem('learningPlan', JSON.stringify(mockLearningPlan));
+        localStorage.setItem('workspace', JSON.stringify(mockWorkspace));
+        
+        setDashboardData(mockDashboardData);
+        setUserProfile(mockUserProfile);
+        setLearningPlan(mockLearningPlan);
+        setWorkspace(mockWorkspace);
+      } else {
+        setDashboardData(JSON.parse(dashboard));
+        setUserProfile(JSON.parse(profile));
+        setLearningPlan(JSON.parse(plan));
+        setWorkspace(JSON.parse(ws));
+      }
     };
     
     loadDashboardData();
