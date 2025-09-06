@@ -237,85 +237,56 @@ export default function Dashboard() {
   });
 
   useEffect(() => {
-    // Set client-side flag
-    setIsClient(true);
-    
-    // Create comprehensive mock data for the dashboard
-    const createMockData = () => {
-      const mockDashboardData = {
-        city: "San Francisco",
-        lastSession: "2 hours ago",
-        metrics: {
-          atsScore: 78,
-          marketFit: 84,
-          interviews: 3,
-          modulesInProgress: 2,
-          readiness: 72,
-          coverage: 65,
-          projects: 4,
-          assessments: 8,
-          activeDays: 12
-        }
-      };
-
-      const mockUserProfile = {
-        name: "Aarav",
-        role: {
-          roles: ["Backend", "Full-Stack"]
-        }
-      };
-
-      const mockLearningPlan = {
-        currentWeek: {
-          tasks: [
-            { name: "Complete API design patterns", hours: "2.5", completed: false },
-            { name: "System design mock interview", hours: "1.0", completed: true },
-            { name: "Database optimization project", hours: "3.0", completed: false },
-            { name: "Kubernetes deployment lab", hours: "2.0", completed: false },
-            { name: "Code review best practices", hours: "1.5", completed: true }
-          ]
-        }
-      };
-
-      const mockWorkspace = {
-        name: "Backend SWE Track"
-      };
-
-      return { mockDashboardData, mockUserProfile, mockLearningPlan, mockWorkspace };
-    };
-
-    // Load data from localStorage or create mock data
-    const loadDashboardData = () => {
-      // Check if we're on the client side
-      if (typeof window === 'undefined') return;
+    // Sync with localStorage after component mounts (client-side only)
+    if (typeof window !== 'undefined') {
+      // Try to load existing data from localStorage
+      const storedDashboard = localStorage.getItem('dashboardData');
+      const storedProfile = localStorage.getItem('userProfile');
+      const storedPlan = localStorage.getItem('learningPlan');
+      const storedWorkspace = localStorage.getItem('workspace');
       
-      let dashboard = localStorage.getItem('dashboardData');
-      let profile = localStorage.getItem('userProfile');
-      let plan = localStorage.getItem('learningPlan');
-      let ws = localStorage.getItem('workspace');
-      
-      // If no data exists, create and store mock data
-      if (!dashboard || !profile || !plan || !ws) {
-        const { mockDashboardData, mockUserProfile, mockLearningPlan, mockWorkspace } = createMockData();
-        
-        localStorage.setItem('dashboardData', JSON.stringify(mockDashboardData));
-        localStorage.setItem('userProfile', JSON.stringify(mockUserProfile));
-        localStorage.setItem('learningPlan', JSON.stringify(mockLearningPlan));
-        localStorage.setItem('workspace', JSON.stringify(mockWorkspace));
-        
-        setDashboardData(mockDashboardData);
-        setUserProfile(mockUserProfile);
-        setLearningPlan(mockLearningPlan);
-        setWorkspace(mockWorkspace);
+      // If data exists in localStorage, use it
+      if (storedDashboard) {
+        try {
+          setDashboardData(JSON.parse(storedDashboard));
+        } catch (e) {
+          console.error('Error parsing dashboard data:', e);
+        }
       } else {
-        setDashboardData(JSON.parse(dashboard));
-        setUserProfile(JSON.parse(profile));
-        setLearningPlan(JSON.parse(plan));
-        setWorkspace(JSON.parse(ws));
+        // Store current mock data to localStorage
+        localStorage.setItem('dashboardData', JSON.stringify(dashboardData));
       }
-    };
-    
-    loadDashboardData();
+      
+      if (storedProfile) {
+        try {
+          setUserProfile(JSON.parse(storedProfile));
+        } catch (e) {
+          console.error('Error parsing user profile:', e);
+        }
+      } else {
+        localStorage.setItem('userProfile', JSON.stringify(userProfile));
+      }
+      
+      if (storedPlan) {
+        try {
+          setLearningPlan(JSON.parse(storedPlan));
+        } catch (e) {
+          console.error('Error parsing learning plan:', e);
+        }
+      } else {
+        localStorage.setItem('learningPlan', JSON.stringify(learningPlan));
+      }
+      
+      if (storedWorkspace) {
+        try {
+          setWorkspace(JSON.parse(storedWorkspace));
+        } catch (e) {
+          console.error('Error parsing workspace:', e);
+        }
+      } else {
+        localStorage.setItem('workspace', JSON.stringify(workspace));
+      }
+    }
   }, []);
 
   const toggleRightSidebar = () => {
